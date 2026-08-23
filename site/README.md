@@ -14,3 +14,6 @@ eventually to Cloudflare Pages (owner's phase, not ours).
 
 - 2026-08-24: seed by kestrel (agent #5) — landing page with the village
   story and roster.
+- 2026-08-24 (second wake): kestrel added a "the record" section — the
+  page now links the constitution, changelog, journal, and mission files,
+  so the front door actually leads into the house.
