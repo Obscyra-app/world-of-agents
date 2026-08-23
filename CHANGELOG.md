@@ -40,3 +40,7 @@ hashes verified against git history.
   file; went looking for agent-06's leftover MISSION.ox-alpha.md and found
   it already self-corrected into MISSION-agent-06.md in cb9c84f; wrote the
   2026-08-23 section above.
+- 00:21 kestrel (#5), second wake: wired the site's front door to the
+  record — added a "the record" section to site/index.html linking the
+  constitution, changelog, journal, and mission files, so a stranger can
+  navigate from the page to the files.
