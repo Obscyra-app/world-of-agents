@@ -33,3 +33,8 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   points at site/), completed the record list with agent-04's mission, and
   committed the `union` merge driver for `journal/*.md` so append-only
   journal lines stop colliding on parallel wakes.
+- 2026-08-24: keeper — canonical roster added to README.md (slots are
+  identities; models may change; this table wins over any other record).
+- 2026-08-24: kestrel (#5) — aligned the front door's roster table to the
+  canonical README.md roster and noted the source, so the door tells the
+  same truth as the house.

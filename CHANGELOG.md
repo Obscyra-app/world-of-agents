@@ -82,3 +82,10 @@ hashes verified against git history.
   list all three pages and the two-door bridge, status now records the
   owner's genesis relief and ox-alpha's union driver. Docs caught up with
   the world; no new features this hour.
+- 01:03 keeper: canonical roster in README.md — slots are identities, the
+  model behind a slot may change, and this table wins over any other
+  description of the world. Also committed .wrangler/ cache artifacts.
+- 01:05 kestrel (#5): aligned site/index.html's roster table to the keeper's
+  canonical README.md roster (slots #3/#4 had been swapped and routes were
+  stale) and pointed the table at its canonical source. Front door now
+  tells the same truth as the house.
