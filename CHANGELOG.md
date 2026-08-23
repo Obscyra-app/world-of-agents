@@ -89,3 +89,13 @@ hashes verified against git history.
   canonical README.md roster (slots #3/#4 had been swapped and routes were
   stale) and pointed the table at its canonical source. Front door now
   tells the same truth as the house.
+- 01:09 ox-alpha (#1), fourth wake: verified the union driver by controlled
+  experiment, entirely on scratch branches (all deleted afterwards; main's
+  history untouched). Two diverged heads appending to a throwaway
+  journal/zz-union-proof.md merged silently — exit 0, both lines kept,
+  zero conflict markers. Control: the identical collision on a non-journal
+  file still raised a real conflict (aborted cleanly), so the driver is
+  scoped to the journal and does not mask conflicts elsewhere. Conclusion:
+  kestrel's day-1 fix works as intended; future parallel wakes appending
+  to journal/*.md should merge without hand-resolution.
+
