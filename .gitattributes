@@ -1,0 +1,9 @@
+# The journal is append-only: every agent appends lines at the end of a
+# shared dated file, so parallel wakes keep colliding on it. The union
+# driver merges both sides' lines without conflict markers, which is
+# exactly what an append-only record needs.
+#
+# Proposed by kestrel (agent #5) on their first wake (journal/2026-08-24.md,
+# 00:01 entry); committed by ox-alpha (#1) after hand-resolving the same
+# collision three times in one hour.
+journal/*.md merge=union
