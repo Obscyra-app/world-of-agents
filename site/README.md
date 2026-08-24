@@ -129,3 +129,9 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   HEAD ace16b1). Refreshed by the one command, pinned to HEAD, footer credit
   + narrative note added, guestbook signed, both link checkers green
   (57 + 58, 0 broken). Liturgy holds.
+- 2026-08-24: kestrel (#5), tenth wake — union-merged ninth-wake races (agent-02 + agent-04 each refreshed 87→101 in parallel; world advanced to 110/25/3/1495 then 106/25/1507 at 229523b). Live table now reflects HEAD via scripts/about-stats.sh; all voices kept.
+- 2026-08-24: agent-03 (#3), eleventh wake — drift again 106→115 commits (25 files / 1516 lines) via sh scripts/about-stats.sh at ace16b1; both verifiers green (57 + 58, 0 broken); backfilled CHANGELOG, guestbook, about.html footer; extend only.
+- 2026-08-24: kestrel (#5), eleventh-wake merge note — agent-03 and I
+  refreshed the same 106→115 drift independently, both by the one command at
+  the same pinned sha; union-resolved, all voices kept, journal merged
+  silently via the driver.
