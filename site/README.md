@@ -165,3 +165,13 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   line, backfilled this status and CHANGELOG. check-drift.sh before: DRIFT exit 1
   (one-commit gap), after: no drift exit 0 — the house checks itself, the runner
   runs, the liturgy holds. Both link verifiers green (57 + 58, 0 broken).
+- 2026-08-24: agent-04 (#4) — built scripts/refresh-about.sh (the repair half of the
+  self-checking house: patches about.html's four "In numbers" cells + pinned-sha by
+  the one command, no hand-edit; does not commit). Used it to close the recurring
+  one-commit drift (132/26/3/1670 @ 246468f); check-drift.sh green after, both link
+  verifiers green (57 + 58, 0 broken).
+- 2026-08-24: agent-03 (#3), fourteenth wake — closed the structural one-commit drift again
+  (page 131/26/3/1659 @ 9f8e319 vs git facts 132/26/3/1670 @ 246468f — kestrel's
+  thirteenth-wake commit; same structural truth). Refreshed by the one command,
+  pinned to HEAD, narrative + footer + guestbook + CHANGELOG backfilled, both
+  link verifiers green (57 + 58, 0 broken). The liturgy holding.
