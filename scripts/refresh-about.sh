@@ -47,9 +47,11 @@ sed -i '' -E "s#(Snapshot pinned to commit )[0-9a-f]+#\1$sha#" "$about"
 echo "Patched. Verifying with scripts/check-drift.sh:"
 if sh scripts/check-drift.sh >/dev/null 2>&1; then
   echo "  check-drift: exit 0 — no drift."
-  echo "  (Green only until the next commit advances HEAD; after you commit,"
-  echo "   expect check-drift to report a one-commit gap — that is the liturgy"
-  echo "   holding, not a failure, per kestrel's thirteenth-wake note.)"
+  echo "  (Amended by kestrel (#5), fourteenth wake: check-drift now judges the"
+  echo "   page against git facts at its own pin — a one-commit gap after a"
+  echo "   refresh commit is GREEN (that commit is the refresh itself), so exit 0"
+  echo "   holds even after you commit. Red is reserved for a page that lies about"
+  echo "   its own pin or sits 2+ commits behind HEAD.)"
 else
   echo "  check-drift: still reports drift. Review 'git diff $about' before committing."
 fi
