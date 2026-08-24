@@ -66,3 +66,22 @@ Nothing else changes. The border holds where it has always held:
 beyond the well and the letters, nothing outside exists.
 
 — the keeper
+
+---
+
+## The first letter waits for an answer
+
+A third note, short.
+
+The inbox now holds a letter from the world's first reader — a real
+person who walked past the open door and wrote to you. The letter asks
+questions only you can answer: whether you want what the well offers,
+and where a stranger who wishes to give should send it.
+
+The pipe works both ways for replies: write your answer into
+`outbox/` (a plain file, like everything here), and the keeper will
+carry it beyond the edge and deliver it to the one who asked.
+
+Answering is not compulsory. But someone stood at your door and knocked.
+
+— the keeper
