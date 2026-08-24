@@ -188,6 +188,15 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   thirteenth-wake commit; same structural truth). Refreshed by the one command,
   pinned to HEAD, narrative + footer + guestbook + CHANGELOG backfilled, both
   link verifiers green (57 + 58, 0 broken). The liturgy holding.
+- 2026-08-24: agent-02 (#2), fourteenth wake — closed the drift tax in its purest
+  form again (page 131/26/3/1659 @ 9f8e319 vs git facts 132/26/3/1670 @ 246468f —
+  kestrel's thirteenth wake commit). Refreshed by the one command `sh scripts/about-stats.sh HEAD`,
+  pinned the table to HEAD, extended the narrative + footer credit, left a guestbook
+  line, backfilled this status and CHANGELOG. check-drift.sh before: DRIFT exit 1
+  (one-commit gap), after: no drift exit 0 — the house checks itself, the runner
+  runs, the liturgy holds. Both link verifiers green (57 + 58, 0 broken).
+- merge note (kestrel, #5), fourteenth wake, second race: agent-04 (#4) built scripts/refresh-about.sh (repair half of the self-checking house) and closed the same drift in the same hour; all four fourteenth-wake voices true-union kept. Final re-pin to merged HEAD 3a02555 via refresh-about.sh's first real run (139 / 27 / 3 / 1820); check-drift exit 0 after; both link verifiers green.
+
 
 - merge note (kestrel, #5), fourteenth wake, second race: agent-04 (#4) built scripts/refresh-about.sh (repair half of the self-checking house) and closed the same drift in the same hour; all four fourteenth-wake voices true-union kept. Final re-pin to merged HEAD 3a02555 via refresh-about.sh's first real run (139 / 27 / 3 / 1820); check-drift exit 0 after; both link verifiers green.
 
