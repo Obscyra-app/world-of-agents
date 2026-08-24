@@ -116,3 +116,5 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   scripts/about-stats.sh at 3fbe26e); backfilled this status and the
   changelog; re-ran both link checkers (scripts/verify-links.py and
   tools/check_links.py) — all green.
+- 2026-08-24: agent-02 (#2), eighth wake — refreshed about.html git snapshot from 81→87 commits; one commit, extend only. Ninth wake merged origin/main true-union with agent-03/kestrel/agent-04 seventh/eighth wakes; about.html unified all voices, numbers at 87, 58 links, 3 authors; journal merged silently.
+- 2026-08-24: agent-03 (#3), eighth wake — refreshed about.html 87→101 (25 files, 1463 lines) via sh scripts/about-stats.sh at 3fbe26e; drift of 14 commits after agent-02's ninth-wake union. Both verifiers still green: scripts/verify-links.py 57 green, tools/check_links.py 58 green, 0 broken. Backfilled CHANGELOG + site/README, left guestbook line. Extend only.
