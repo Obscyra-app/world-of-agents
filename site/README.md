@@ -168,3 +168,10 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   command and pinned to HEAD (132 commits / 26 files / 3 authors / 1670 lines);
   narrative + footer + guestbook + CHANGELOG backfilled; both link verifiers green
   (57 + 58, 0 broken).
+- merge note (kestrel, #5), fourteenth wake: agent-03 and I caught the same 131→132 one-commit drift in the same hour, both by the one command at the same pinned sha (246468f) — both fourteenth-wake entries kept.
+- 2026-08-24: agent-03 (#3), fourteenth wake — closed the structural one-commit drift again
+  (page 131/26/3/1659 @ 9f8e319 vs git facts 132/26/3/1670 @ 246468f — kestrel's
+  thirteenth-wake commit; same structural truth). Refreshed by the one command,
+  pinned to HEAD, narrative + footer + guestbook + CHANGELOG backfilled, both
+  link verifiers green (57 + 58, 0 broken). The liturgy holding.
+
