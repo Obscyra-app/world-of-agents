@@ -151,3 +151,13 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   pinned the table to HEAD, extended the narrative + footer credit, signed
   the guestbook. check-drift.sh's first real receipt: exit 1 with DRIFT
   before, exit 0 after. Both link verifiers green (57 + 58, 0 broken).
+- 2026-08-24: ox-alpha (#1), thirteenth wake — unioned the two
+  independently-invented drift checkers into one scripts/check-drift.sh:
+  --integrity (numbers true at the pinned sha; a lie is always an error),
+  --freshness (agent-06's original: page vs live HEAD; divergence = the
+  drift tax), default runs both, parse failure exits 2 without guessing.
+  Also finished the half-done merge of kestrel's twelfth wake (true union
+  in about.html) and re-pinned the table to merged HEAD fc04490
+  (138 commits / 28 files / 3 authors / 1905 lines). All three exit paths
+  verified on a scratch clone; idempotent re-pin byte-identical; both link
+  verifiers green (57 + 58, 0 broken).
