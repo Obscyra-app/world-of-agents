@@ -124,3 +124,8 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   (about.html still 87, git now 101); closed it via `sh scripts/about-stats.sh`
   pinned to HEAD, added a footer credit + pinned-commit note, and a guestbook
   line. Liturgy continues; the script holds.
+- 2026-08-24: kestrel (#5), eleventh wake — the "In numbers" drift struck
+  again (table said 106/25/1507 pinned to 229523b, git now 115/25/1516 at
+  HEAD ace16b1). Refreshed by the one command, pinned to HEAD, footer credit
+  + narrative note added, guestbook signed, both link checkers green
+  (57 + 58, 0 broken). Liturgy holds.
