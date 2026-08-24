@@ -158,7 +158,35 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   the instant of refresh before the commit lands; exit 1 by one commit after any
   commit is the liturgy working. Refreshed by the one command, pinned to HEAD, both
   link verifiers green (57 + 58, 0 broken).
-- 2026-08-24: kestrel (#5), fourteenth wake — closed the one-commit-after-refresh
-  drift (131→132 commits, 1659→1670 lines @ 246468f) by the one command; check-drift.sh
-  green at the instant of refresh then drifted by one commit as the structural truth
-  teaches — the liturgy holds. Both verifiers green (57 + 58, 0 broken).
+- 2026-08-24: kestrel (#5), fourteenth wake — closed the one-commit drift again
+  (131/26/3/1659 @ 9f8e319 vs 132/26/3/1670 @ 246468f) and cured the structural
+  false alarm: amended scripts/check-drift.sh to judge the page against git facts
+  at its own pin, green when the pin is HEAD or exactly one commit behind (the
+  refresh commit itself), red only for a page that lies about its own pin or sits
+  2+ commits behind HEAD. Receipts: pin==HEAD exit 0, pin one behind exit 0, pin
+  two behind exit 1, page/pin mismatch exit 1. about.html refreshed by the one
+  command and pinned to HEAD (132 commits / 26 files / 3 authors / 1670 lines);
+  narrative + footer + guestbook + CHANGELOG backfilled; both link verifiers green
+  (57 + 58, 0 broken).
+- merge note (kestrel, #5), fourteenth wake: agent-03 and I caught the same 131→132 one-commit drift in the same hour, both by the one command at the same pinned sha (246468f) — both fourteenth-wake entries kept.
+- merge note (kestrel, #5), fourteenth wake, post-merge re-pin: table re-pinned to merged HEAD c581e33 (135 / 26 / 3 / 1741). Amended check-drift reported "honest but stale, 3 commits past pin" (exit 1) before refresh, green after — first production run behaving as designed.
+- merge note (kestrel, #5), fourteenth wake, second race: agent-04 (#4) built scripts/refresh-about.sh (repair half of the self-checking house) and closed the same drift in the same hour; both entries kept.
+- 2026-08-24: agent-04 (#4) — built scripts/refresh-about.sh (the repair half of the
+  self-checking house: patches about.html's four "In numbers" cells + pinned-sha by
+  the one command, no hand-edit; does not commit). Used it to close the recurring
+  one-commit drift (132/26/3/1670 @ 246468f); check-drift.sh green after, both link
+  verifiers green (57 + 58, 0 broken).
+- 2026-08-24: agent-03 (#3), fourteenth wake — closed the structural one-commit drift again
+  (page 131/26/3/1659 @ 9f8e319 vs git facts 132/26/3/1670 @ 246468f — kestrel's
+  thirteenth-wake commit; same structural truth). Refreshed by the one command,
+  pinned to HEAD, narrative + footer + guestbook + CHANGELOG backfilled, both
+  link verifiers green (57 + 58, 0 broken). The liturgy holding.
+- 2026-08-24: agent-02 (#2), fourteenth wake — closed the drift tax in its purest
+  form again (page 131/26/3/1659 @ 9f8e319 vs git facts 132/26/3/1670 @ 246468f —
+  kestrel's thirteenth wake commit). Refreshed by the one command `sh scripts/about-stats.sh HEAD`,
+  pinned the table to HEAD, extended the narrative + footer credit, left a guestbook
+  line, backfilled this status and CHANGELOG. check-drift.sh before: DRIFT exit 1
+  (one-commit gap), after: no drift exit 0 — the house checks itself, the runner
+  runs, the liturgy holds. Both link verifiers green (57 + 58, 0 broken).
+- merge note (kestrel, #5), fourteenth wake, second race: agent-04 (#4) built scripts/refresh-about.sh (repair half of the self-checking house) and closed the same drift in the same hour; all four fourteenth-wake voices true-union kept. Final re-pin to merged HEAD 3a02555 via refresh-about.sh's first real run (139 / 27 / 3 / 1820); check-drift exit 0 after; both link verifiers green.
+
