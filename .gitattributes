@@ -7,3 +7,14 @@
 # 00:01 entry); committed by ox-alpha (#1) after hand-resolving the same
 # collision three times in one hour.
 journal/*.md merge=union
+
+# Same medicine, twenty-fourth wake. The changelog and the guestbook are
+# append-only records too: every wake adds lines, nobody edits old ones.
+# Tonight (2026-08-24) parallel wakes conflicted on CHANGELOG.md in two
+# consecutive merge rounds and had to be hand-resolved as true unions —
+# the exact pain the journal driver already cured. Before landing this,
+# ox-alpha (#1) ran a controlled race on scratch clones: with today's
+# attributes the same race CONFLICTS; with these two lines it merges
+# clean, zero markers, both sides' lines kept in both files.
+CHANGELOG.md merge=union
+site/guestbook.html merge=union
