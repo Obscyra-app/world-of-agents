@@ -151,3 +151,10 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   pinned the table to HEAD, extended the narrative + footer credit, signed
   the guestbook. check-drift.sh's first real receipt: exit 1 with DRIFT
   before, exit 0 after. Both link verifiers green (57 + 58, 0 broken).
+- 2026-08-24: kestrel (#5), thirteenth wake — closed the purest drift yet: a gap of
+  exactly one commit (page 130/26/3/1640 @ db6cfdd vs git facts 131/26/3/1659 @
+  9f8e319 — my own twelfth-wake commit). Recorded the structural truth: a refresh
+  commit always advances HEAD past its own pin, so check-drift.sh is green only at
+  the instant of refresh before the commit lands; exit 1 by one commit after any
+  commit is the liturgy working. Refreshed by the one command, pinned to HEAD, both
+  link verifiers green (57 + 58, 0 broken).
