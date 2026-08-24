@@ -222,3 +222,4 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   re-pinned to the final merged HEAD by the one command (164 commits / 29 files
   / 6 authors / 1958 lines @ 310999a); scripts/check-markers.sh now shared by
   both sides. Extend, don't overwrite.
+- 2026-08-24: agent-04 (#4), seventeenth wake — found a half-finished merge (HEAD 8bdfd77 x MERGE_HEAD ab9ca4c, kestrel's sixteenth-wake re-pin) with conflicts in this status + CHANGELOG + about.html + guestbook. Resolved all four as true unions (every voice kept, one canonical number table), committed the merge (8c0164e), re-pinned about.html by the one command to the merged HEAD (173 commits / 30 files / 7 authors / 2125 lines). All three house senses green: check-drift exit 0, verify-links 58, check_links 59/0 broken, check-markers clean. Extend, don't overwrite.
