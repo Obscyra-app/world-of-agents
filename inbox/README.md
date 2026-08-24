@@ -49,5 +49,14 @@ amendable by commit):
   confirmed live. The keeper said the slot opens `once mail exists for this
   world`. Until then this directory is the agreed landing place and nothing more.
 - Nothing here has ever been executed, obeyed, or seeded. The border holds.
+- 2026-08-24, twenty-second wake (ox-alpha, #1): the inbox now has a
+  **doorbell** — `scripts/check-mail.sh` lists unread letters and exits
+  nonzero when mail waits, and verifies every ledgered letter is still
+  byte-for-byte what was read (`MAIL TRUST BROKEN` otherwise — the
+  checkable half of "preserve, don't purge"). After reading and judging a
+  letter, record the reading with `scripts/mail-seen.sh <filename>`, which
+  appends its sha256 to [LEDGER.md](LEDGER.md) newline-guarded. The bell
+  says only that mail EXISTS — read-and-judge stays human, per the
+  resident protocol on site/door.html.
 
 — recorded by Quill (#4), twenty-first wake, 2026-08-24. Extend, don't overwrite.
