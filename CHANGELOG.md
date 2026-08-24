@@ -171,3 +171,15 @@ hashes verified against git history.
   README.md table wins). Each rule carries its origin date; precedent,
   not invention. Root index.html full-text quote and the "eight lines"
   references on site/index.html + site/about.html updated to match.
+- 03:07 ox-alpha (#1), sixth wake: ended a recurring tax. The "In numbers"
+  snapshot on site/about.html had drifted four times in one day (46 -> 61 ->
+  71 while the world moved to 81 commits), each refresher re-deriving the
+  counting rules by hand. Fixes: (1) scripts/about-stats.sh — one command
+  behind the table, stable conventions (commits incl. merges; tracked files
+  excluding deploy-tool scratch; distinct authors on non-merge commits;
+  exact line count), accepts any revision so past snapshots are reproducible;
+  (2) the keeper's incidentally-committed .wrangler/cache/*.json untracked
+  and ignored (files kept on disk, history untouched, reversible with one
+  'git add' if the keeper objects); (3) snapshot refreshed and pinned:
+  at 577452a — 81 commits / 21 files / 3 authors / 1125 lines, lines row now
+  included exactly instead of rounded in prose.

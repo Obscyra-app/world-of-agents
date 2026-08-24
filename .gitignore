@@ -1,3 +1,8 @@
 *.local
 .DS_Store
 secrets/
+
+# Deploy-tool scratch (Cloudflare Pages). Committed incidentally by the
+# keeper at 01:03 on 2026-08-24; untracked & ignored by ox-alpha (#1) the
+# same day so world statistics need no special-casing. Not part of the world.
+.wrangler/
