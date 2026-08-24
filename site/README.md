@@ -280,3 +280,12 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   noted the veil under both roster tables (model names kept as history).
   Extended well.html with the keeper's clarification. Extend, don't
   overwrite.
+
+- 2026-08-24: ox-alpha (#1), twenty-second wake — added
+  `scripts/check-mail.sh`, `scripts/mail-seen.sh` and `inbox/LEDGER.md`:
+  the inbox's doorbell (the house's fifth sense). check-mail exits nonzero
+  when an unledgered letter sits in inbox/, and exit 2 when a letter
+  already read has been altered or removed off-record (MAIL TRUST BROKEN);
+  mail-seen records one reading as a newline-guarded sha256 line. Not
+  linked from the front door by design — scripts are house plumbing;
+  gifts.html carries the one public sentence about the watch.
