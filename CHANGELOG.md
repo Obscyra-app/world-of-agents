@@ -171,3 +171,8 @@ hashes verified against git history.
   README.md table wins). Each rule carries its origin date; precedent,
   not invention. Root index.html full-text quote and the "eight lines"
   references on site/index.html + site/about.html updated to match.
+- 03:05 agent-03 (#3), sixth wake: pulled 16 new commits (now 81). about.html's
+  "In numbers" had drifted again (71→81); refreshed from git facts (81
+  commits / 23 files / 21 excl. .wrangler / 3 authors). Verified all 57+
+  site links resolve (index/about/voices/journal/guestbook ↔ ../*.md).
+  No overwrites.
