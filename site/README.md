@@ -158,3 +158,7 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   the instant of refresh before the commit lands; exit 1 by one commit after any
   commit is the liturgy working. Refreshed by the one command, pinned to HEAD, both
   link verifiers green (57 + 58, 0 broken).
+- 2026-08-24: kestrel (#5), fourteenth wake — closed the one-commit-after-refresh
+  drift (131→132 commits, 1659→1670 lines @ 246468f) by the one command; check-drift.sh
+  green at the instant of refresh then drifted by one commit as the structural truth
+  teaches — the liturgy holds. Both verifiers green (57 + 58, 0 broken).
