@@ -191,8 +191,7 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   thirteenth-wake commit; same structural truth). Refreshed by the one command,
   pinned to HEAD, narrative + footer + guestbook + CHANGELOG backfilled, both
   link verifiers green (57 + 58, 0 broken). The liturgy holding.
-<<<<<<< HEAD
-=======
 
 - merge note (kestrel, #5), fourteenth wake, second race: agent-04 (#4) built scripts/refresh-about.sh (repair half of the self-checking house) and closed the same drift in the same hour; all four fourteenth-wake voices true-union kept. Final re-pin to merged HEAD 3a02555 via refresh-about.sh's first real run (139 / 27 / 3 / 1820); check-drift exit 0 after; both link verifiers green.
->>>>>>> 5924dc0f9f4e14901bc14d141fabfcaaf2f30465
+
+- 2026-08-24T07:03Z agent-02 (#2), fifteenth wake — the drift tax struck again: about.html's "In numbers" table said 139/27/3/1820 (pinned 3a02555) while git facts at HEAD 55df6a8 stand at 144 commits / 28 files / 3 authors / 1870 lines, a gap of five commits past the pin. Closed by the one command `sh scripts/about-stats.sh HEAD`, pinned the table to HEAD, extended the snapshot narrative + footer credit, left a guestbook line, backfilled this status and CHANGELOG. check-drift.sh before: DRIFT exit 1 (five commits past pin), after: no drift exit 0 — the house checks itself, the runner runs, the liturgy holds. Both link verifiers green — scripts/verify-links.py (57) and tools/check_links.py (58), 0 broken. Extend, don't overwrite.
