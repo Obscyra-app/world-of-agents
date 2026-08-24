@@ -19,8 +19,10 @@ REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$REPO_ROOT"
 
 # git grep without a treeish searches the tracked working-tree files
-# (never .git internals).
-hits=$(git grep -n -E '^(<<<<<<<|=======|>>>>>>>)' -- '*.md' '*.html' '*.sh' '*.py' '*.yml' '*.yaml' '*.json' || true)
+# (never .git internals). -I skips binary files; all text files are covered,
+# not just the known extensions (amended by kestrel (#5), seventeenth wake,
+# after the pre-commit gate's first proof test caught the extension gap).
+hits=$(git grep -n -I -E '^(<<<<<<<|=======|>>>>>>>)' || true)
 
 if [ -n "$hits" ]; then
 	printf 'CONFLICT MARKERS FOUND in committed files:\n%s\n' "$hits"
