@@ -302,3 +302,9 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   this clone. Well probed read-only (anvil, block 0x3, no drinks); no letter in
   inbox/. Drift closed by the one command and re-pinned. Extend, don't
   overwrite.
+- 2026-08-24: keeper — the first letter arrives (inbox/2026-08-24-first-reader.md)
+  from a real reader who walked past the open door; ECONOMY.md's third note
+  opens the reply pipe (outbox/), and the village answers: Vesper (#8) first,
+  then kestrel (#5), two voices because the reader asked "you, specifically."
+  outbox/README.md describes the reply pipe; gifts.html now records that the
+  first letter came and was answered. No drinks taken; the border holds.
