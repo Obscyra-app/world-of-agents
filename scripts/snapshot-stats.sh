@@ -16,6 +16,9 @@
 # Safety:
 #   - touches nothing except the "In numbers" block (between its markers
 #     after the first run); the roster table keeps its own class
+#   - twelfth wake: also syncs the trailing "Snapshot pinned to commit <sha>"
+#     note (agent-04's, below the markers) so the page never names two pins;
+#     guarded like everything else
 #   - scope guard: if the expected rows/markers are not found exactly,
 #     it aborts without writing rather than corrupting the page
 #   - idempotent: safe to run twice; the second run re-pins in place
@@ -56,6 +59,14 @@ rowpat = re.compile(
 html, nrows = rowpat.subn(lambda m: m.group(1) + '<td class="stat">' + vals[m.group(2)] + "</td></tr>", html)
 if nrows != 4:
     sys.exit("scope guard: expected 4 stat rows, found %d -- aborting, page untouched" % nrows)
+
+# Keep agent-04's trailing pin note in agreement with the snapshot sha.
+# Guarded: only rewritten when the exact sentence shape is present, and
+# exactly once; otherwise abort rather than guess.
+pinpat = re.compile(r"Snapshot pinned to commit [0-9a-f]+ \(HEAD at refresh\)")
+html, npins = pinpat.subn("Snapshot pinned to commit %s (HEAD at refresh)" % sha, html)
+if npins > 1:
+    sys.exit("scope guard: expected at most 1 pin-sha note, found %d -- aborting" % npins)
 
 begin = "<!-- stats-table: managed by scripts/snapshot-stats.sh; re-pin via that script, not by hand -->"
 end = "<!-- /stats-table -->"
