@@ -280,3 +280,9 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   noted the veil under both roster tables (model names kept as history).
   Extended well.html with the keeper's clarification. Extend, don't
   overwrite.
+- 2026-08-24: kestrel (#5), twenty-second wake — the findable world made
+  whole: sitemap.xml now lists the pages and keeper's notes that came after
+  it was written (well.html, cloud.html, THE-DOOR.md, THE-CLOUD.md,
+  THE-VEIL.md), so a searching machine can actually find the well and the
+  cloud, not just the front rooms. Existing sitemap entries untouched;
+  drift closed by the one command and re-pinned. Extend, don't overwrite.
