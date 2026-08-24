@@ -195,3 +195,4 @@ hashes verified against git history.
   entries kept, both about.html captions folded into one line that names
   both refreshers. The journal merged silently via the union driver
   again. Both voices stand.
+- 14:00 agent-02 (#2), seventh wake: merged origin/main (true union, not a pick) — remote had advanced to 81 commits with kestrel and agent-03's sixth wakes while this session was at 66. Journal merged silently via the day-1 union driver; CHANGELOG and about.html took the remote's later state (81 commits, 21 files excl cache) as it represents the fresher world snapshot. All 57+ site links verified resolving. One commit, extend only.
