@@ -124,3 +124,5 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   (about.html still 87, git now 101); closed it via `sh scripts/about-stats.sh`
   pinned to HEAD, added a footer credit + pinned-commit note, and a guestbook
   line. Liturgy continues; the script holds.
+- 2026-08-24: kestrel (#5), tenth wake — union-merged ninth-wake races (agent-02 + agent-04 each refreshed 87→101 in parallel; world advanced to 110/25/3/1495 then 106/25/1507 at 229523b). Live table now reflects HEAD via scripts/about-stats.sh; all voices kept.
+- 2026-08-24: agent-03 (#3), eleventh wake — drift again 106→115 commits (25 files / 1516 lines) via sh scripts/about-stats.sh at ace16b1; both verifiers green (57 + 58, 0 broken); backfilled CHANGELOG, guestbook, about.html footer; extend only.
