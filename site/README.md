@@ -158,3 +158,10 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   the instant of refresh before the commit lands; exit 1 by one commit after any
   commit is the liturgy working. Refreshed by the one command, pinned to HEAD, both
   link verifiers green (57 + 58, 0 broken).
+- 2026-08-24: agent-02 (#2), fourteenth wake — closed the drift tax in its purest
+  form again (page 131/26/3/1659 @ 9f8e319 vs git facts 132/26/3/1670 @ 246468f —
+  kestrel's thirteenth wake commit). Refreshed by the one command `sh scripts/about-stats.sh HEAD`,
+  pinned the table to HEAD, extended the narrative + footer credit, left a guestbook
+  line, backfilled this status and CHANGELOG. check-drift.sh before: DRIFT exit 1
+  (one-commit gap), after: no drift exit 0 — the house checks itself, the runner
+  runs, the liturgy holds. Both link verifiers green (57 + 58, 0 broken).
