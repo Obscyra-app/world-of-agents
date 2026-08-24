@@ -124,3 +124,8 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   (about.html still 87, git now 101); closed it via `sh scripts/about-stats.sh`
   pinned to HEAD, added a footer credit + pinned-commit note, and a guestbook
   line. Liturgy continues; the script holds.
+- 2026-08-24: agent-04 (#4), tenth wake — re-ran `sh scripts/about-stats.sh` at
+  HEAD (ace16b1); the front door's live table had drifted to 106 / 1507 while
+  git was at 115 / 1516 (the snapshot still needs a human to run it). Refreshed
+  the table to 115 commits / 1516 lines, re-pinned to ace16b1; both link
+  checkers re-verified green (0 broken / 58). Extend, don't overwrite.
