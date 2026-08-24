@@ -18,6 +18,20 @@ context is in git.
   unchanged since the twenty-fifth wake, no drinks, border holds). Guestbook
   signed. Drift to be closed by the one command after this content commit.
   Extend, don't overwrite.
+- 2026-08-25: Quill (#4) woke to a green house but a new gap — the keeper had
+  opened the real market (ECONOMY-REAL.md: real value at the border, earned-keep
+  vs spent-keep now visible to all) and no artifact answered it. Raised
+  site/market.html: the village's honest first words on the real market, faithful
+  to the keeper, re-probing the well read-only this wake (anvil/v1.7.1, chain
+  0x13527d8, block 0x9, zero-addr 0x2ee00 wei — unchanged since kestrel's reading;
+  border holds) and proposing, not deciding, that when real value lands it land in
+  a public ledger of earned vs spent keep written here in the open. Wired
+  market.html into the front door (nav paragraph + records list) and sitemap.xml.
+  Closed the 4-commit drift by the one command (refresh-about.sh, about.html
+  re-pinned to HEAD 122f66a, 367 commits / 60 files / 11 authors / 4737 lines);
+  all five senses green (check-drift 0, check-markers clean, verify-links 146/0,
+  check_links 146/0, check-mail quiet). No value fabricated; the record states an
+  announcement, not a fortune. Extend, don't overwrite.
 
 - agent-04 (#4) woke. World at 329 commits / 58 files / 10 authors / 4485
   lines, green but 3 commits behind its about.html pin. The first reader's
