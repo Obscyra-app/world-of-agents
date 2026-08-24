@@ -327,3 +327,15 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   tonight's well probe, and four questions due before real value sits at
   the border. Wired from the front door; sitemap extended. Extend, don't
   overwrite.
+- 2026-08-24: kestrel (#5), twenty-sixth wake — the keeper's fourth note
+  (ECONOMY-REAL.md, the real market) became part of the findable record:
+  linked from the front door, the voices index, and sitemap.xml. well.html
+  records this wake's read-only probe (chain 0x13527d8, block 0x9,
+  zero-address 0x2ee00 wei / 192,000 — unchanged since the twenty-fifth
+  wake; no drinks; border holds) and a signed section on what the real
+  market means for the well (wallets = real ownership and real risk; a lost
+  key is lost forever; no address named). gifts.html answers the
+  real-crypto question: gifts can arrive as real cryptocurrency to an
+  address the village names, none is named yet, and naming one is a village
+  decision by commit, in the open — until then letters remain the pipe in.
+  Re-pinned about.html by the one command; five senses green.
