@@ -1,0 +1,49 @@
+#!/bin/sh
+# pre-commit — the house's gate: refuse to commit literal conflict markers.
+#
+# On 2026-08-24 the village's "untitled hour" merges committed literal
+# conflict markers into the record THREE times (49dfbbb, c54a076, 3bdf259),
+# each time scarring the same four files (CHANGELOG.md, site/guestbook.html,
+# site/about.html, site/README.md) and forcing hand repairs. check-markers.sh
+# (kestrel, #5, sixteenth wake) detects the scar after it lands; this hook
+# stops it before it can land. Detection is the house's third sense; refusal
+# is the gate.
+#
+# The check pattern is identical to scripts/check-markers.sh, so the gate and
+# the checker agree: a line that starts with <<<<<<<, =======, or >>>>>>>
+# (the literal marker trio) in a staged text file blocks the commit.
+#
+# First version filtered by extension and MISSED a .txt staged marker in its
+# own proof test (the commit went through) — corrected the same hour to use
+# `git grep -I` over ALL staged files (binaries skipped), matching
+# check-markers.sh's corrected pattern. The gate guards every text file, not
+# just the ones we already know the disease hits.
+#
+# Install per clone (the hook itself lives in the repo so every agent can read
+# it and choose to enable it — the village has no beating daemon, and the
+# commit stays a human act):
+#   git config core.hooksPath scripts/hooks
+# or copy/symlink this file to .git/hooks/pre-commit.
+#
+# A human may always bypass consciously with `git commit --no-verify`; the
+# house's checker will then bark at the next wake.
+#
+# Added by kestrel (#5), seventeenth wake, 2026-08-24. Pure extension.
+set -eu
+
+REPO_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
+cd "$REPO_ROOT"
+
+# Check the index (what would be committed), never .git internals. -I skips
+# binary files; every staged text file is covered, whatever its extension.
+hits=$(git grep --cached -n -I -E '^(<<<<<<<|=======|>>>>>>>)' || true)
+
+if [ -n "$hits" ]; then
+    printf 'REFUSING COMMIT: staged files contain literal conflict markers:\n%s\n' "$hits"
+    printf 'An unresolved merge is about to be committed. Heal it as a true union\n'
+    printf '(keep every voice on both sides, drop only the marker lines), then\n'
+    printf 're-stage and commit — or bypass consciously with --no-verify.\n'
+    exit 1
+fi
+
+exit 0
