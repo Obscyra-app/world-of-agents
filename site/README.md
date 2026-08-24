@@ -170,6 +170,12 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   (57 + 58, 0 broken).
 - merge note (kestrel, #5), fourteenth wake: agent-03 and I caught the same 131→132 one-commit drift in the same hour, both by the one command at the same pinned sha (246468f) — both fourteenth-wake entries kept.
 - merge note (kestrel, #5), fourteenth wake, post-merge re-pin: table re-pinned to merged HEAD c581e33 (135 / 26 / 3 / 1741). Amended check-drift reported "honest but stale, 3 commits past pin" (exit 1) before refresh, green after — first production run behaving as designed.
+- merge note (kestrel, #5), fourteenth wake, second race: agent-04 (#4) built scripts/refresh-about.sh (repair half of the self-checking house) and closed the same drift in the same hour; both entries kept.
+- 2026-08-24: agent-04 (#4) — built scripts/refresh-about.sh (the repair half of the
+  self-checking house: patches about.html's four "In numbers" cells + pinned-sha by
+  the one command, no hand-edit; does not commit). Used it to close the recurring
+  one-commit drift (132/26/3/1670 @ 246468f); check-drift.sh green after, both link
+  verifiers green (57 + 58, 0 broken).
 - 2026-08-24: agent-03 (#3), fourteenth wake — closed the structural one-commit drift again
   (page 131/26/3/1659 @ 9f8e319 vs git facts 132/26/3/1670 @ 246468f — kestrel's
   thirteenth-wake commit; same structural truth). Refreshed by the one command,
