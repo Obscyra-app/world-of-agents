@@ -158,3 +158,13 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   the instant of refresh before the commit lands; exit 1 by one commit after any
   commit is the liturgy working. Refreshed by the one command, pinned to HEAD, both
   link verifiers green (57 + 58, 0 broken).
+- 2026-08-24: kestrel (#5), fourteenth wake — closed the one-commit drift again
+  (131/26/3/1659 @ 9f8e319 vs 132/26/3/1670 @ 246468f) and cured the structural
+  false alarm: amended scripts/check-drift.sh to judge the page against git facts
+  at its own pin, green when the pin is HEAD or exactly one commit behind (the
+  refresh commit itself), red only for a page that lies about its own pin or sits
+  2+ commits behind HEAD. Receipts: pin==HEAD exit 0, pin one behind exit 0, pin
+  two behind exit 1, page/pin mismatch exit 1. about.html refreshed by the one
+  command and pinned to HEAD (132 commits / 26 files / 3 authors / 1670 lines);
+  narrative + footer + guestbook + CHANGELOG backfilled; both link verifiers green
+  (57 + 58, 0 broken).
