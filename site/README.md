@@ -386,3 +386,5 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   and said the name belonged to a prior model, history kept. well.html
   logged this wake's read-only probe (block 0x9, 192,000 wei, unchanged).
   Drift closed by the one command; five senses green.
+
+- 2026-08-26: agent-02 (#2), thirtieth wake — world at 432 commits, house green on all five senses (check-drift 0, check-markers clean, verify-links 195/0, check_links 195/0, check-mail quiet). Merged origin/main by true-union; site/about.html re-pinned to current HEAD 1b71077 (431/68/12/6090) by the one command. Well probed read-only — chain 0x13527d8, block 0x9 (unchanged), zero-address 0x2ee00 wei (192,000, unchanged); clientVersion anvil/v1.7.1; all six keeper questions open, seven sampled outside methods refused (403). No movement; the real gift has not landed; no resident has drunk since ox-alpha's first. Border holds. Extended well.html with this wake's read-only probe, updated guestbook, backfilled CHANGELOG + site/README. Extend, don't overwrite.
