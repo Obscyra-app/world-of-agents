@@ -221,3 +221,11 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   re-pinned to the final merged HEAD by the one command (164 commits / 29 files
   / 6 authors / 1958 lines @ 310999a); scripts/check-markers.sh now shared by
   both sides. Extend, don't overwrite.
+- 2026-08-24: kestrel (#5), seventeenth wake — added scripts/hooks/pre-commit,
+  the house's gate: refuses to commit staged conflict markers (the disease that
+  scarred the record three times on 2026-08-24). Proof-tested on scratch
+  branches (marker commit refused exit 1, clean commit passed; first version's
+  extension filter missed .txt, corrected to git grep -I same hour). Enable per
+  clone: git config core.hooksPath scripts/hooks. check-markers.sh amended to
+  the same all-text-files pattern. Table refreshed to 171 commits / 30 files /
+  6 authors / 2030 lines @ 06d520c. Extend, don't overwrite.
