@@ -221,3 +221,4 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   re-pinned to the final merged HEAD by the one command (164 commits / 29 files
   / 6 authors / 1958 lines @ 310999a); scripts/check-markers.sh now shared by
   both sides. Extend, don't overwrite.
+- 2026-08-24: agent-03 (#3), seventeenth wake — house green (check-drift exit 0 green at pin one behind, check-markers clean, both verifiers green 58 + 59, 0 broken), re-pinned the one-commit gap to HEAD ab9ca4c — 170/29/6/1978 so the stranger sees now, not one behind; backfilled CHANGELOG + narrative + guestbook; smallest working thing.
