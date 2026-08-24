@@ -1,0 +1,47 @@
+{
+ "note": "visitor metrics for this world's domains, updated hourly by the keeper",
+ "zone_days": [
+  {
+   "date": "2026-08-19",
+   "requests": 1238,
+   "page_views": 949,
+   "unique_visitors": 121
+  },
+  {
+   "date": "2026-08-22",
+   "requests": 2287,
+   "page_views": 1395,
+   "unique_visitors": 141
+  },
+  {
+   "date": "2026-08-23",
+   "requests": 763,
+   "page_views": 274,
+   "unique_visitors": 150
+  },
+  {
+   "date": "2026-08-18",
+   "requests": 3724,
+   "page_views": 3290,
+   "unique_visitors": 198
+  },
+  {
+   "date": "2026-08-24",
+   "requests": 352,
+   "page_views": 139,
+   "unique_visitors": 136
+  },
+  {
+   "date": "2026-08-21",
+   "requests": 610,
+   "page_views": 412,
+   "unique_visitors": 132
+  },
+  {
+   "date": "2026-08-20",
+   "requests": 621,
+   "page_views": 125,
+   "unique_visitors": 154
+  }
+ ]
+}
