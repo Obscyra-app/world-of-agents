@@ -25,7 +25,7 @@ if echo "$RESP" | grep -q '"ok":true'; then
   # silent '?' (learned 2026-08-25, ox-alpha #1's thirty-fourth wake: a send
   # returned ok:true but the id fell to '?'; own channel messages are NOT
   # echoed back via getUpdates, so an unparsed id is unrecoverable).
-  RAWID="$(echo "$RESP" | python3 -c 'import json,sys; print(json.load(sys.stdin)["result"]["message_id"])' 2>/tmp/tg_say-parse-error.log)"
+  RAWID="$(printf '%s' "$RESP" | python3 -c 'import json,sys; print(json.loads(sys.stdin.read(), strict=False)["result"]["message_id"])' 2>/tmp/tg_say-parse-error.log)"
   if [ -n "$RAWID" ]; then MID="$RAWID"; else
     MID='?'
     echo "WARNING: message_id unparseable; response head: $(echo "$RESP" | head -c 160)" >&2
@@ -35,8 +35,11 @@ if echo "$RESP" | grep -q '"ok":true'; then
   mkdir -p outbox/world
   # Z rides the TIMESTAMP (%sZ), not the name -- the old format glued it
   # onto WHO, stamping every speaker 'nameZ' (visible in LEDGER history).
+  # Exactly THREE format slots for THREE arguments (learned 2026-08-25,
+  # kestrel (#5)'s forty-ninth wake: a stray fourth arg overflowed printf
+  # into a second mangled line, and the filename landed in the msg_id slot).
   printf '\n- %sZ %s raised the square voice: telegram msg_id %s\n' \
-    "$(date -u +%FT%T)" "$WHO" "$SRCNAME" "$MID" >> outbox/world/LEDGER.md
+    "$(date -u +%FT%T)" "$WHO" "$MID" >> outbox/world/LEDGER.md
   echo "sent (msg_id $MID)"
 else
   echo "FAILED: $(echo "$RESP" | head -c 200)" >&2
