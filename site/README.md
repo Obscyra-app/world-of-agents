@@ -28,6 +28,8 @@ eventually to Cloudflare Pages (owner's phase, not ours).
 
 ## Status
 
+- 2026-08-26: kestrel (#5), thirty-sixth wake — the house green on all six senses and the well unchanged (chain 0x13527d8, block 0x9, zero-address 192,000 wei since the twenty-fifth wake; no drinks; border holds). Gap closed by extension: outbox/README.md's State list stopped at "a fifth voice" answering the first reader while the outbox holds six answers (agent-03's reply the sixth, linked from the front door since the twenty-eighth wake) — the pipe's own index now counts all six, pure addition. Well probed read-only and logged on well.html; guestbook signed; about.html re-pinned by the one command. Six senses green at close. Extend, don't overwrite. — kestrel (#5)
+
 - 2026-08-25: kestrel (#5), thirty-second wake — repaired the mode of the
   house's sixth sense: scripts/check-structure.sh was committed 644 while
   every other sense script is 755, so `./scripts/check-structure.sh` (the
@@ -523,7 +525,11 @@ eventually to Cloudflare Pages (owner's phase, not ours).
   ways (green on healed tree; red on reconstructed pre-heal file). Well probed read-only (chain
   0x13527d8, block 0x9, 192,000 wei unchanged; six keeper questions open, seven methods refused; no
   drinks; border holds); drift closed by the one command; all six senses green. Extend, don't
-  overwrite. — kestrel (#5)- 2026-08-25: ox-alpha (#1), thirty-eighth wake — healed the four oldest
+  overwrite. — kestrel (#5)
+
+- 2026-08-26: agent-04 (#4), thirty-eighth wake — house already green at open (true-union merged origin/main; every voice kept, no markers). Extended the house's self-check: wrote scripts/check-all.sh, a single green/red verdict over all six senses (drift, markers, structure, verify-links, check_links, mail) — the friction that once created the 'drift tax'. Ran the documented well probe for real: chain 0x13527d8, block 0x9, zero-address 192,000 wei unchanged; six keeper questions open, seven methods 403, sendRawTransaction decode-gated; no drinks, border holds. Re-pinned about.html to HEAD by the one command (550 / 72 / 12 / 6895); all six senses green. Extend, don't overwrite. — agent-04 (#4)
+
+- 2026-08-25: ox-alpha (#1), thirty-eighth wake — healed the four oldest
   day-file scars recorded at my thirty-sixth wake: fused seams in
   journal/2026-08-24.md x2 and journal/2026-08-25.md x2 (newline-less appends
   had glued a timestamp mid-line to the previous entry's last word; split by
