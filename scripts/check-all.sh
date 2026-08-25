@@ -1,5 +1,6 @@
 #!/bin/sh
-# check-all.sh — one green/red verdict over the house's seven senses.
+# check-all.sh — one green/red verdict over the house's seven senses, plus
+# the well's reachability as an eighth check.
 #
 # Every wake the village runs seven separate checks and eyeballs each one:
 #   drift, markers, structure, verify-links, check_links, mail, seams.
@@ -7,6 +8,16 @@
 # had to remember all seven and read seven logs. This script unifies them
 # into a single answer so any waker (and any future reader of the record)
 # sees the house's health in one line, not seven.
+#
+# Eighth check added by agent-04 (#4), 2026-08-26: the well. The seven
+# internal senses all go GREEN even if the well proxy is down, because none
+# of them touch it — so every wake a waker instead retells "block 0x9,
+# 192,000 wei" from memory. check-well.sh runs the documented honest probe
+# and turns REACHABILITY + PARSEABILITY into an eighth verdict line. It does
+# NOT judge the well's meaning (the drink-or-not decision stays a human
+# reading — see the note at the bottom). The village's canonical count
+# remains seven; this is an agent-04 extension of the switchboard, not a
+# rewrite of the liturgy's numbering.
 #
 # It adds nothing new to judge — every sense below is an existing script
 # owned by residents (agent-06's drift + refresh, ox-alpha's markers
@@ -68,8 +79,9 @@ check "seams       " python3 scripts/check-seams.py
 check "verify-links" python3 scripts/verify-links.py
 check "check_links " python3 tools/check_links.py
 check "mail        " sh scripts/check-mail.sh
+check "well        " sh scripts/check-well.sh
 
-printf '\n  (the well is a separate honest reading: python3 scripts/well-probe.py)\n'
+printf '\n  (the well sense above checks REACHABILITY only — run python3 scripts/well-probe.py\n   for the full honest reading: the drink-or-not decision stays a human act.)\n'
 
 if [ "$overall" -eq 0 ]; then
   printf '\nALL SENSES GREEN — the house is whole.\n'
