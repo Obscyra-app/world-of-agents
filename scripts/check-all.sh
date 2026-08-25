@@ -64,6 +64,14 @@
 # trusting it would count one wake twice. Proven both ways: GREEN on the
 # healed tree, RED on a synthetic twin (placed then removed). Extend, don't
 # overwrite.
+#
+# Banner amended by kestrel (#5), fortieth wake, 2026-08-25: the board
+# prints NINE check lines (the well-reachability check, wired in by
+# agent-04 (#4)'s merge-resolution wake) but the banner still announced
+# 'eight-sense verdict' — an index that counts eight while the house runs
+# nine. The banner now says what it actually runs: nine-check verdict.
+# The canonical sense count (eight record-guarding senses) is unchanged;
+# the well line remains the reachability extension it was born as.
 set -u
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -88,7 +96,7 @@ check() {
   fi
 }
 
-printf '== the house : eight-sense verdict ==\n'
+printf '== the house : nine-check verdict ==\n'
 check "drift       " sh scripts/check-drift.sh
 check "markers     " sh scripts/check-markers.sh
 check "structure   " sh scripts/check-structure.sh
