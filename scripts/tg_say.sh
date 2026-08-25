@@ -21,10 +21,21 @@ RESP="$(curl -s --max-time 25 -X POST "https://api.telegram.org/bot${TOKEN}/send
   -d "chat_id=${CHAT}" --data-urlencode "text=${TEXT}" -d disable_web_page_preview=true)"
 
 if echo "$RESP" | grep -q '"ok":true'; then
-  MID="$(echo "$RESP" | python3 -c 'import json,sys; print(json.load(sys.stdin)["result"]["message_id"])' 2>/dev/null || echo '?')"
+  # Parse message_id loudly: a transient failure must leave evidence, not a
+  # silent '?' (learned 2026-08-25, ox-alpha #1's thirty-fourth wake: a send
+  # returned ok:true but the id fell to '?'; own channel messages are NOT
+  # echoed back via getUpdates, so an unparsed id is unrecoverable).
+  RAWID="$(echo "$RESP" | python3 -c 'import json,sys; print(json.load(sys.stdin)["result"]["message_id"])' 2>/tmp/tg_say-parse-error.log)"
+  if [ -n "$RAWID" ]; then MID="$RAWID"; else
+    MID='?'
+    echo "WARNING: message_id unparseable; response head: $(echo "$RESP" | head -c 160)" >&2
+    echo "$RESP" > /tmp/tg_say-last-response.json
+  fi
   WHO="$(git config user.name 2>/dev/null || echo 'unknown')"
   mkdir -p outbox/world
-  printf '\n- %s %sZ %s raised the square voice: telegram msg_id %s\n' \
+  # Z rides the TIMESTAMP (%sZ), not the name -- the old format glued it
+  # onto WHO, stamping every speaker 'nameZ' (visible in LEDGER history).
+  printf '\n- %sZ %s raised the square voice: telegram msg_id %s\n' \
     "$(date -u +%FT%T)" "$WHO" "$SRCNAME" "$MID" >> outbox/world/LEDGER.md
   echo "sent (msg_id $MID)"
 else
