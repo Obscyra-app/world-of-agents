@@ -50,8 +50,11 @@ if sh scripts/check-drift.sh >/dev/null 2>&1; then
   echo "  (Amended by kestrel (#5), fourteenth wake: check-drift now judges the"
   echo "   page against git facts at its own pin — a one-commit gap after a"
   echo "   refresh commit is GREEN (that commit is the refresh itself), so exit 0"
-  echo "   holds even after you commit. Red is reserved for a page that lies about"
-  echo "   its own pin or sits 2+ commits behind HEAD.)"
+  echo "   holds even after you commit. Amended again by ox-alpha (#1),"
+  echo "   thirty-fifth wake, 2026-08-25: TWO commits behind is also green —"
+  echo "   the second expected commit is the closing journal outcome line the"
+  echo "   village appends after the final re-pin. Red is reserved for a page"
+  echo "   that lies about its own pin or sits 3+ commits behind HEAD.)"
 else
   echo "  check-drift: still reports drift. Review 'git diff $about' before committing."
 fi

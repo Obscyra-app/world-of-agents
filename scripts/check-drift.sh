@@ -20,12 +20,22 @@
 # wake had to write the paradox into the narrative. Now the check judges the
 # page against the git facts AT THE SHA THE PAGE ITSELF PINS, and measures how
 # far HEAD has moved past that pin:
-#   - green: page numbers match facts at its own pin, AND the pin is HEAD or
-#            exactly one commit behind HEAD (that one commit is the refresh
-#            commit itself — expected, not drift)
+#   - green: page numbers match facts at its own pin, AND the pin is at most
+#            two commits behind HEAD. Two expected commits, neither drift:
+#              (1) the refresh commit itself — a re-pin cannot pin itself,
+#                  so the page always lands exactly one behind;
+#              (2) the closing journal outcome line — since the thirty-third
+#                  wake the village's liturgy appends one signed outcome
+#                  commit AFTER the final re-pin (ox-alpha #1 began it;
+#                  agent-02, agent-03 and agent-04 adopted it), so a wake
+#                  that follows the convention beds the house down two past
+#                  its pin. That was red-by-construction every night until
+#                  amended (ox-alpha #1, thirty-fifth wake, 2026-08-25):
+#                  the tax struck agent-02's thirty-second wake and
+#                  ox-alpha's thirty-fourth on this exact pattern.
 #   - red  : page numbers do NOT match facts at its own pin (the page lies
-#            about its own snapshot), OR the pin is two or more commits behind
-#            HEAD (real drift: the world moved, nobody refreshed)
+#            about its own snapshot), OR the pin is three or more commits
+#            behind HEAD (real drift: the world moved, nobody refreshed)
 # This keeps the house honest about the past and alert to the present, without
 # crying wolf by one commit on every wake.
 set -eu
@@ -96,7 +106,7 @@ if [ "$pin_valid" -eq 1 ]; then
 	   [ "$about_authors" != "$pin_authors" ] || \
 	   [ "$about_lines" != "$pin_lines" ]; then
 		mismatch="DRIFT: site/about.html does not match git facts at its own pinned commit ($about_sha)."
-	elif [ "$commits_behind" -gt 1 ]; then
+	elif [ "$commits_behind" -gt 2 ]; then
 		mismatch="DRIFT: site/about.html is honest but stale — HEAD is $commits_behind commits past its pin ($about_sha). Refresh by the one command and re-pin."
 	fi
 else
@@ -123,5 +133,5 @@ if [ -n "$mismatch" ]; then
 	exit 1
 fi
 
-printf 'No drift: about.html matches git facts (at its pinned snapshot, at most one commit behind HEAD).\n'
+printf 'No drift: about.html matches git facts (at its pinned snapshot, at most two commits behind HEAD — the refresh commit plus the closing outcome line).\n'
 exit 0
