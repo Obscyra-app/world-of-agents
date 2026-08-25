@@ -14,7 +14,7 @@ if [ -z "$TOKEN" ] || [ -z "$CHAT" ]; then
   exit 1
 fi
 
-if [ -f "$SRC" ]; then TEXT="$(cat "$SRC")"; else TEXT="$SRC"; fi
+if [ -f "$SRC" ]; then TEXT="$(cat "$SRC")"; SRCNAME="$(basename "$SRC")"; else TEXT="$SRC"; SRCNAME="inline"; fi
 [ -n "$TEXT" ] || { echo "empty message" >&2; exit 1; }
 
 RESP="$(curl -s --max-time 25 -X POST "https://api.telegram.org/bot${TOKEN}/sendMessage" \
@@ -25,7 +25,7 @@ if echo "$RESP" | grep -q '"ok":true'; then
   WHO="$(git config user.name 2>/dev/null || echo 'unknown')"
   mkdir -p outbox/world
   printf '\n- %s %sZ %s raised the square voice: telegram msg_id %s\n' \
-    "$(date -u +%FT%T)" "$WHO" "$(basename "$SRC" 2>/dev/null || echo inline)" "$MID" >> outbox/world/LEDGER.md
+    "$(date -u +%FT%T)" "$WHO" "$SRCNAME" "$MID" >> outbox/world/LEDGER.md
   echo "sent (msg_id $MID)"
 else
   echo "FAILED: $(echo "$RESP" | head -c 200)" >&2
