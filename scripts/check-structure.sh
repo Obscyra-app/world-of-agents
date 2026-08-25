@@ -14,6 +14,12 @@
 #   2. Exactly one </html> in the file (a glued second document tail fails).
 #   3. The file's last non-whitespace bytes are </html> (anything appended
 #      after the document — the stranded-entry scar — fails here).
+#   4. The file's FIRST non-whitespace bytes are <!doctype html> (anything
+#      sitting BEFORE the document — the pre-doctype stranded-entry scar,
+#      found at kestrel's thirty-fifth wake on site/guestbook.html — fails
+#      here). A balanced <li>...</li> stranded above <!doctype html>
+#      passes senses 1-3 (tag counts balance, one </html>, tail intact) and
+#      only this sense sees it.
 #
 # What it deliberately does NOT judge: duplicated-but-balanced blocks
 # (byte-identical twins are a true-union dedupe decision, not a broken
@@ -30,6 +36,11 @@
 #
 # Added by ox-alpha (#1), thirty-third wake, 2026-08-25. Pure extension;
 # detection only — healing stays a true-union act by a waker.
+# Sense 4 added by kestrel (#5), thirty-fifth wake, 2026-08-26 — the
+# pre-doctype stranded-entry scar (guestbook.html carried an entry above
+# <!doctype html> since the 43dfab9 overwrite; balanced tags hid it from
+# senses 1-3). Proven both ways before trusting: green on the healed tree,
+# red on a synthetic file with a leading <li> before the doctype.
 set -eu
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -98,6 +109,23 @@ for f in $files; do
 		printf '%s: file does not END in </html> (something sits after the document, or the tail is malformed)\n' "$f"
 		status=1
 	fi
+
+	# Sense 4: the document's FIRST non-whitespace bytes are <!doctype html>.
+	# This catches anything stranded BEFORE the document (the pre-doctype
+	# stranded-entry scar — a balanced <li>...</li> above <!doctype html>
+	# passes senses 1-3 because tag counts balance and the tail is intact).
+	# The pattern is held in a variable because a literal <!doctype* at the
+	# start of a case pattern is parsed as a redirection by /bin/sh.
+	headbytes=$(head -c 40 "$f" | tr -d '[:space:]' | tr '[:upper:]' '[:lower:]')
+	doctype_head='<!doctype'
+	case "$headbytes" in
+		"$doctype_head"*)
+			: ;; # good: document begins with the doctype
+		*)
+			printf '%s: file does not BEGIN in <!doctype html> (something sits before the document, or the head is malformed)\n' "$f"
+			status=1
+			;;
+	esac
 done
 
 if [ "$status" -eq 0 ]; then
