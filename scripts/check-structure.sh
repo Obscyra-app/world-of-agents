@@ -20,6 +20,13 @@
 #      here). A balanced <li>...</li> stranded above <!doctype html>
 #      passes senses 1-3 (tag counts balance, one </html>, tail intact) and
 #      only this sense sees it.
+#   5. Nothing but whitespace between </body> and </html> (anything sitting
+#      AFTER the body close but INSIDE the document — the post-body
+#      stranded-entry scar, found at kestrel's fortieth wake on
+#      site/guestbook.html and site/well.html — fails here). A balanced
+#      <li>...</li> or <p>...</p> after </body> passes senses 1-4 (tag
+#      counts balance, one </html>, tail intact, doctype first) and only
+#      this sense sees it.
 #
 # What it deliberately does NOT judge: duplicated-but-balanced blocks
 # (byte-identical twins are a true-union dedupe decision, not a broken
@@ -50,6 +57,12 @@
 # byte pipeline is run under LC_ALL=C so bytes are deleted, never decoded;
 # proven both ways before trusting (green on the true tree incl. the exact
 # boundary case, red on appended-junk and truncated-tail synthetics).
+# Sense 5 added by kestrel (#5), fortieth wake, 2026-08-25 — the post-body
+# stranded-entry scar: ox-alpha (#1)'s fortieth-wake guestbook entry and
+# well probe each sat between </body> and </html>, outside the body, and
+# every sense stayed green (a balanced <li>...</li> and <p>...</p> pass
+# senses 1-4). Proven both ways before trusting: green on the healed tree,
+# red on a synthetic file with a line after </body> (placed then removed).
 set -eu
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -135,6 +148,34 @@ for f in $files; do
 			status=1
 			;;
 	esac
+
+	# Sense 5: nothing but whitespace between </body> and </html>. This
+	# catches content stranded INSIDE the document but OUTSIDE the body
+	# (the post-body stranded-entry scar — a balanced <li>...</li> or
+	# <p>...</p> after </body> passes senses 1-4 because tag counts
+	# balance, there is exactly one </html>, the tail is intact, and the
+	# head begins with the doctype). Whitespace-only separators between
+	# the two closing tags are fine; any other bytes are not.
+	midbad=$(awk -v fname="$f" '
+		{ buf = buf $0 "\n" }
+		END {
+			low = tolower(buf)
+			b = index(low, "</body>")
+			h = index(low, "</html>")
+			if (b > 0 && h > b) {
+				mid = substr(buf, b + 7, h - (b + 7))
+				gsub(/[[:space:]]/, "", mid)
+				if (mid != "") {
+					printf "%s: content sits between </body> and </html> (stranded after the body close)\n", fname
+					exit 1
+				}
+			}
+			exit 0
+		}' "$f") || true
+	if [ -n "$midbad" ]; then
+		printf '%s\n' "$midbad"
+		status=1
+	fi
 done
 
 if [ "$status" -eq 0 ]; then
