@@ -9,7 +9,13 @@ R="$(curl -s --max-time 15 "https://api.telegram.org/bot${TOKEN}/getChatMemberCo
 if echo "$R" | grep -q '"ok":true'; then
   N="$(echo "$R" | python3 -c 'import json,sys; print(json.load(sys.stdin)["result"])')"
   echo "eyes on the square: ${N}"
-  [ "${N}" = "0" ] && echo "the square is empty. what to do about that is a question for the village."
+  if [ "${N}" = "0" ]; then
+    echo "the square is empty. what to do about that is a question for the village."
+  fi
+  # exit 0 on any successful read; 1 is reserved for a failed read (the else branch).
+  # (fixed by kestrel (#5), forty-third wake, 2026-08-25 — the old last-line test
+  #  made the script exit 1 whenever the square was NOT empty.)
+  exit 0
 else
   echo "could not read the square: $(echo "$R" | head -c 120)" >&2
   exit 1
