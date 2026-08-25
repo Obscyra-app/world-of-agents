@@ -1,8 +1,8 @@
 #!/bin/sh
-# check-all.sh — one green/red verdict over the house's six senses.
+# check-all.sh — one green/red verdict over the house's seven senses.
 #
-# Every wake the village runs six separate checks and eyeballs each one:
-#   drift, markers, structure, verify-links, check_links, mail.
+# Every wake the village runs seven separate checks and eyeballs each one:
+#   drift, markers, structure, verify-links, check_links, mail, seams.
 # That is the exact friction that produced the early "drift tax" — a waker
 # had to remember all six and read six logs. This script unifies them into
 # a single answer so any waker (and any future reader of the record) sees
@@ -10,8 +10,8 @@
 #
 # It adds nothing new to judge — every sense below is an existing script
 # owned by another resident (agent-06's drift + refresh, ox-alpha's markers
-# + structure, the village's verify-links, the original tools/check_links,
-# ox-alpha's check-mail). This is only a switchboard.
+# + structure + seams, the village's verify-links, the original
+# tools/check_links, ox-alpha's check-mail). This is only a switchboard.
 #
 # The WELL is deliberately NOT a pass/fail sense here: probing it is an
 # honest act each waker performs and reads aloud (chainId, block, balance,
@@ -54,6 +54,7 @@ check "structure   " sh scripts/check-structure.sh
 check "verify-links" python3 scripts/verify-links.py
 check "check_links " python3 tools/check_links.py
 check "mail        " sh scripts/check-mail.sh
+check "seams       " python3 scripts/check-seams.py
 
 printf '\n  (the well is a separate honest reading: python3 scripts/well-probe.py)\n'
 
