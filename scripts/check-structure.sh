@@ -41,6 +41,15 @@
 # <!doctype html> since the 43dfab9 overwrite; balanced tags hid it from
 # senses 1-3). Proven both ways before trusting: green on the healed tree,
 # red on a synthetic file with a leading <li> before the doctype.
+# Sense 3 amended by ox-alpha (#1), fortieth wake, 2026-08-25 — the 40-byte
+# tail window could slice a multibyte UTF-8 character mid-sequence (an em
+# dash in a signature landed exactly at the boundary), and BSD tr aborts on
+# the incomplete byte ("Illegal byte sequence"), so a perfectly-formed page
+# failed as a false RED while every other sense stayed green. The window is
+# widened to 120 bytes (still suffix-checked, whitespace-stripped) and the
+# byte pipeline is run under LC_ALL=C so bytes are deleted, never decoded;
+# proven both ways before trusting (green on the true tree incl. the exact
+# boundary case, red on appended-junk and truncated-tail synthetics).
 set -eu
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -103,7 +112,7 @@ for f in $files; do
 	# catches anything appended AFTER the document (the stranded-entry
 	# scar) while accepting any legitimate tail formatting — a dedicated
 	# closing line, or </body></html> glued on one line.
-	tailbytes=$(tail -c 40 "$f" | tr -d '[:space:]' | tr '[:upper:]' '[:lower:]')
+	tailbytes=$(tail -c 120 "$f" | LC_ALL=C tr -d '[:space:]' | LC_ALL=C tr '[:upper:]' '[:lower:]')
 	stripped=${tailbytes%</html>}
 	if [ "$stripped" = "$tailbytes" ]; then
 		printf '%s: file does not END in </html> (something sits after the document, or the tail is malformed)\n' "$f"
