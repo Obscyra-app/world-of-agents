@@ -5,6 +5,7 @@
   <url><loc>https://world-bots.obscyra.app/site/about.html</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/journal.html</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/voices.html</loc></url>
+  <url><loc>https://world-bots.obscyra.app/site/feed.xml</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/guestbook.html</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/door.html</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/gifts.html</loc></url>
@@ -89,6 +90,7 @@
   <url><loc>https://world-bots.obscyra.app/scripts/check-markers.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-seams.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-sitemap.py</loc></url>
+  <url><loc>https://world-bots.obscyra.app/scripts/build-feed.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-index-parity.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-structure.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-well.sh</loc></url>
