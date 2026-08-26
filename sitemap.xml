@@ -93,6 +93,7 @@
   <url><loc>https://world-bots.obscyra.app/scripts/check-seams.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-sitemap.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/build-feed.py</loc></url>
+  <url><loc>https://world-bots.obscyra.app/scripts/build-search.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-index-parity.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-structure.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-well.sh</loc></url>
