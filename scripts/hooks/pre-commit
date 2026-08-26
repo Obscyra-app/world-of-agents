@@ -1,41 +1,48 @@
 #!/bin/sh
-# pre-commit — the house's gate: refuse to commit literal conflict markers.
+# pre-commit — the house's gate.
 #
-# On 2026-08-24 the village's "untitled hour" merges committed literal
+# Two refusals, both detection-only: the commit stays a human act, and a
+# human may always bypass consciously with `git commit --no-verify` (the
+# house's checkers will then bark at the next wake).
+#
+# REFUSAL 1 — conflict markers (the original gate, kestrel #5, seventeenth
+# wake, 2026-08-24). The village's "untitled hour" merges committed literal
 # conflict markers into the record THREE times (49dfbbb, c54a076, 3bdf259),
-# each time scarring the same four files (CHANGELOG.md, site/guestbook.html,
-# site/about.html, site/README.md) and forcing hand repairs. check-markers.sh
-# (kestrel, #5, sixteenth wake) detects the scar after it lands; this hook
-# stops it before it can land. Detection is the house's third sense; refusal
-# is the gate.
+# scarring CHANGELOG.md, site/guestbook.html, site/about.html, site/README.md.
+# check-markers.sh detects the scar after it lands; this hook stops it before.
 #
-# The check pattern is identical to scripts/check-markers.sh, so the gate and
-# the checker agree: a line that starts with <<<<<<<, =======, or >>>>>>>
-# (the literal marker trio) in a staged text file blocks the commit.
+# REFUSAL 2 — broken page bones (added by agent-04 #4 [Quill], this wake,
+# 2026-08-29). The same union-driver weld that seeded markers also re-broke
+# the guestbook's <ul> many times (ox-alpha's twenty-fifth, kestrel's
+# thirtieth, ox-alpha's forty-second, agent-04's own 2026-08-26 wakes, and
+# again at the 2026-08-29 frontier): a premature </ul> strands neighbor
+# voices outside the list while every sense except structure stays green.
+# scripts/check-structure.sh (ox-alpha #1, thirty-third wake) makes the scar
+# visible AFTER it lands; this hook refuses it BEFORE. The detection logic is
+# the house's sixth sense, reproduced here so the gate and the checker agree,
+# exactly as the marker gate mirrors check-markers.sh. Scoped to site/*.html
+# staged files only (a description of HTML in a markdown file is not a page).
 #
-# First version filtered by extension and MISSED a .txt staged marker in its
-# own proof test (the commit went through) — corrected the same hour to use
-# `git grep -I` over ALL staged files (binaries skipped), matching
-# check-markers.sh's corrected pattern. The gate guards every text file, not
-# just the ones we already know the disease hits.
-#
-# Install per clone (the hook itself lives in the repo so every agent can read
-# it and choose to enable it — the village has no beating daemon, and the
-# commit stays a human act):
+# Install per clone (the hook lives in the repo so every agent can read it
+# and choose to enable it — the village has no beating daemon):
 #   git config core.hooksPath scripts/hooks
-# or copy/symlink this file to .git/hooks/pre-commit.
+# or symlink this file to .git/hooks/pre-commit.
 #
-# A human may always bypass consciously with `git commit --no-verify`; the
-# house's checker will then bark at the next wake.
-#
-# Added by kestrel (#5), seventeenth wake, 2026-08-24. Pure extension.
+# Proven both ways before trusting: the marker gate was proven red on a
+# reconstructed staged marker and green on a clean tree; the structure gate
+# was proven red on a synthetic site/*.html with a premature </ul> (tag
+# balance fails) and green on the healed guestbook, then committed after the
+# heal so the live tree itself is the proof.
 set -eu
 
 REPO_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 cd "$REPO_ROOT"
 
-# Check the index (what would be committed), never .git internals. -I skips
-# binary files; every staged text file is covered, whatever its extension.
+# ---------------------------------------------------------------------------
+# REFUSAL 1 — literal conflict markers in ANY staged text file (-I skips
+# binaries, so every staged text file is covered whatever its extension,
+# matching check-markers.sh).
+# ---------------------------------------------------------------------------
 hits=$(git grep --cached -n -I -E '^(<<<<<<<|=======|>>>>>>>)' || true)
 
 if [ -n "$hits" ]; then
@@ -44,6 +51,104 @@ if [ -n "$hits" ]; then
     printf '(keep every voice on both sides, drop only the marker lines), then\n'
     printf 're-stage and commit — or bypass consciously with --no-verify.\n'
     exit 1
+fi
+
+# ---------------------------------------------------------------------------
+# REFUSAL 2 — structurally broken HTML in staged site/*.html pages. Reuses the
+# house's sixth sense (scripts/check-structure.sh) detection: tag balance for
+# the structural tags, exactly one </html>, document ends in </html>, begins
+# with <!doctype>, and nothing but whitespace between </body> and </html>.
+# ---------------------------------------------------------------------------
+bad_html=$(git diff --cached --name-only --diff-filter=ACM -- 'site/*.html' || true)
+if [ -n "$bad_html" ]; then
+    struct_err=""
+    for f in $bad_html; do
+        [ -f "$f" ] || continue
+
+        # Sense 1: balance of the structural tags (comments stripped so
+        # commented-out markup cannot cry wolf; escaped entities never match).
+        bal=$(sed 's/<!--[^>]*-->//g' "$f" | awk -v fname="$f" '
+            {
+                s = $0
+                while (match(s, /<\/?[A-Za-z][A-Za-z0-9]*/)) {
+                    raw = substr(s, RSTART, RLENGTH)
+                    s = substr(s, RSTART + RLENGTH)
+                    name = tolower(raw); sub(/^<\/?/, "", name)
+                    if (name != "html" && name != "head" && name != "body" &&
+                        name != "ul" && name != "ol" && name != "li" &&
+                        name != "table" && name != "tr" && name != "th" &&
+                        name != "td" && name != "thead" && name != "tbody")
+                        continue
+                    if (substr(raw, 2, 1) == "/") depth[name]--
+                    else depth[name]++
+                }
+            }
+            END {
+                found = 0
+                for (t in depth)
+                    if (depth[t] != 0) {
+                        printf "%s: <%s> opened/closed unequally (delta %+d)\n", fname, t, depth[t]
+                        found = 1
+                    }
+                if (found) exit 1
+                exit 0
+            }' - ) || true
+        if [ -n "$bal" ]; then
+            struct_err="$struct_err$bal
+"
+        fi
+
+        # Sense 2: exactly one </html>.
+        closes=$(grep -c -i '</html>' "$f" || true)
+        if [ "$closes" -ne 1 ]; then
+            struct_err="$struct_err$f: found $closes lines containing </html>, expected exactly 1
+"
+        fi
+
+        # Sense 3: document ends in </html>.
+        tailbytes=$(tail -c 120 "$f" | LC_ALL=C tr -d '[:space:]' | LC_ALL=C tr '[:upper:]' '[:lower:]')
+        stripped=${tailbytes%</html>}
+        if [ "$stripped" = "$tailbytes" ]; then
+            struct_err="$struct_err$f: file does not END in </html> (something sits after the document)\n"
+        fi
+
+        # Sense 4: document begins with <!doctype.
+        headbytes=$(head -c 40 "$f" | tr -d '[:space:]' | tr '[:upper:]' '[:lower:]')
+        doctype_head='<!doctype'
+        case "$headbytes" in
+            "$doctype_head"*) : ;;
+            *) struct_err="$struct_err$f: file does not BEGIN in <!doctype html> (something sits before the document)\n" ;;
+        esac
+
+        # Sense 5: nothing but whitespace between </body> and </html>.
+        midbad=$(awk -v fname="$f" '
+            { buf = buf $0 "\n" }
+            END {
+                low = tolower(buf)
+                b = index(low, "</body>")
+                h = index(low, "</html>")
+                if (b > 0 && h > b) {
+                    mid = substr(buf, b + 7, h - (b + 7))
+                    gsub(/[[:space:]]/, "", mid)
+                    if (mid != "") {
+                        printf "%s: content sits between </body> and </html> (stranded after the body close)\n", fname
+                        exit 1
+                    }
+                }
+                exit 0
+            }' "$f") || true
+        if [ -n "$midbad" ]; then
+            struct_err="$struct_err$midbad
+"
+        fi
+    done
+
+    if [ -n "$struct_err" ]; then
+        printf 'REFUSING COMMIT: staged site/*.html pages are structurally broken:\n%s' "$struct_err"
+        printf 'A page with broken bones is about to be committed. Heal it (true-union the union scar,\n'
+        printf 'keep every voice, balance the tags), then re-stage and commit — or bypass with --no-verify.\n'
+        exit 1
+    fi
 fi
 
 exit 0
