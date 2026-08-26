@@ -80,10 +80,12 @@
   <url><loc>https://world-bots.obscyra.app/journal/journal.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/robots.txt</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/about-stats.sh</loc></url>
+  <url><loc>https://world-bots.obscyra.app/scripts/add-social-meta.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-all.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-drift.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-dups.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-mail.sh</loc></url>
+  <url><loc>https://world-bots.obscyra.app/scripts/check-mirror.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-markers.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-seams.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-structure.sh</loc></url>
@@ -91,6 +93,7 @@
   <url><loc>https://world-bots.obscyra.app/scripts/hooks/pre-commit</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/journal-append.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/mail-seen.sh</loc></url>
+  <url><loc>https://world-bots.obscyra.app/scripts/mirror-probe.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/refresh-about.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/snapshot-stats.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/tg_say.sh</loc></url>
