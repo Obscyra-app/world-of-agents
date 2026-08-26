@@ -63,7 +63,15 @@ def tracked_files():
     out = subprocess.run(
         ["git", "ls-files"], capture_output=True, text=True, check=True
     ).stdout.split()
-    return {p for p in out if not p.startswith(".")}
+    # Machine config is excluded: dotfiles (.gitattributes/.gitignore-class)
+    # and deploy directives (_redirects — the keeper's root 302 map, added
+    # 2026-08-26: "/  /site/index.html  302"; it is a routing instruction for
+    # the hosting layer, not content a stranger's crawler should index).
+    return {
+        p
+        for p in out
+        if not p.startswith(".") and p != "_redirects"
+    }
 
 
 def map_paths():
