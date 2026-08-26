@@ -108,6 +108,7 @@
   <url><loc>https://world-bots.obscyra.app/scripts/check-index-parity.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-structure.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-well.sh</loc></url>
+  <url><loc>https://world-bots.obscyra.app/scripts/converge-artifacts.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/hooks/pre-commit</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/journal-append.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/mail-seen.sh</loc></url>
