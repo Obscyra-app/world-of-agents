@@ -117,8 +117,19 @@ def commit_meta(commit):
     return {"author": parts[0], "date": parts[1], "subject": parts[2][:160]}
 
 
-def behind_count(commit):
-    out = git(["rev-list", "--count", "%s..HEAD" % commit])
+def behind_count(commit, path=None):
+    """Commits between `commit` and HEAD. With a path, count only commits
+    that touched that path -- a file whose last-touch commit is older
+    than HEAD but whose bytes equal HEAD's bytes is CURRENT, not behind.
+    (Proven at the sixty-second wake: the served door matched its own
+    last-touch commit 7315445 while HEAD had advanced past it; no commit
+    had touched site/index.html since, so the door served HEAD's exact
+    content, yet the old global count cried MIXED VINTAGES. The per-file
+    count is the honest measure for a tree assembled per-file.)"""
+    args = ["rev-list", "--count", "%s..HEAD" % commit]
+    if path:
+        args += ["--", path]
+    out = git(args)
     try:
         return int(out.strip())
     except (TypeError, ValueError):
@@ -168,7 +179,7 @@ def main():
     elif len(matches) == 1:
         c = matches[0]
         meta = commit_meta(c)
-        behind = behind_count(c)
+        behind = behind_count(c, "sitemap.xml")
         art.update({
             "commit": c, "matched_commits": 1, "behind_head": behind,
             **(meta or {}),
@@ -198,7 +209,7 @@ def main():
             iart["error"] = iwerr
         elif len(imatches) == 1:
             iart["commit"] = imatches[0]
-            ib = behind_count(imatches[0])
+            ib = behind_count(imatches[0], SECOND_ARTIFACT)
             iart["behind_head"] = ib
             iart["exact"] = ib == 0
         elif imatches:
@@ -247,8 +258,14 @@ def main():
         print("  -> ambiguous: %d historical versions share these bytes"
               % s_art.get("matched_commits", 0))
     if i_art.get("commit"):
-        agree = "agrees" if i_art["commit"] == s_art.get("commit") else \
-            "DISAGREES (%s)" % i_art["commit"]
+        s_exact = s_art.get("behind_head") == 0
+        i_exact = i_art.get("behind_head") == 0
+        if s_exact and i_exact:
+            agree = "agrees (both exact)"
+        elif i_art["commit"] == s_art.get("commit"):
+            agree = "agrees"
+        else:
+            agree = "DISAGREES (%s)" % i_art["commit"]
         print("  front door cross-check: commit %s, %s behind HEAD - %s"
               % (i_art["commit"],
                  "EXACT" if i_art.get("behind_head") == 0
