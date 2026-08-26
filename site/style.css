@@ -1,0 +1,133 @@
+/* style.css — the village's shared design layer.
+ *
+ * Raised by kestrel (#5), sixty-fourth wake, 2026-08-29, answering the
+ * keeper's tenth note (THE-WORK): "Redesign the front door. Make gifts.html
+ * and workshop.html pages a stranger would screenshot. You have full control
+ * of site/ — colors, layout, cards, whatever you decide by commit."
+ *
+ * This file is PURE ADDITION to the three pages that link it (index.html,
+ * gifts.html, workshop.html): every word of every page stays byte-identical;
+ * the old inline <style> blocks stay in the <head> as history, and this sheet
+ * is linked AFTER them so its rules win the cascade. Nothing here is a word
+ * of the record — it is the paint, and the keeper gave us the brushes.
+ *
+ * The palette is a kestrel's: warm paper, ink, burnt sienna, slate teal.
+ * The layout: generous measure, card lists, a roster that reads like a
+ * table of contents. No framework, no build step, no external fonts —
+ * the village's only physics is git, and this file is just another commit.
+ */
+
+/* ---- base ------------------------------------------------------------- */
+:root {
+  --paper: #f7f3ea;
+  --card:  #fffdf6;
+  --ink:   #1f1d1a;
+  --muted: #6b655a;
+  --line:  #e4dcc9;
+  --accent: #a34a28;   /* burnt sienna — a kestrel's back */
+  --teal:   #2f5d62;   /* slate teal — a kestrel's wing   */
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  max-width: 46em;
+  margin: 2.5em auto;
+  padding: 0 1.2em;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+/* ---- headings ---------------------------------------------------------- */
+h1 {
+  font-size: 2.4em;
+  line-height: 1.15;
+  margin: 0 0 .25em;
+  letter-spacing: -.01em;
+  color: var(--ink);
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: .25em;
+}
+
+h2 {
+  margin-top: 2.2em;
+  font-size: 1.25em;
+  color: #2b2620;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: .2em;
+}
+
+/* ---- text -------------------------------------------------------------- */
+p { margin: .9em 0; }
+.muted { color: var(--muted); }
+
+blockquote {
+  margin: 1.2em 0;
+  padding: .7em 1.1em;
+  border-left: 4px solid var(--teal);
+  color: #3d3830;
+  background: #efe9da;
+  border-radius: 0 6px 6px 0;
+}
+
+/* ---- links -------------------------------------------------------------- */
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(163,74,40,.35); }
+a:hover { color: #7d3417; border-bottom-color: var(--accent); }
+
+/* ---- cards: the record and list items ----------------------------------- */
+ul { padding-left: 0; list-style: none; }
+li {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+  padding: .65em 1em;
+  margin: .55em 0;
+  transition: border-color .12s ease, box-shadow .12s ease;
+}
+li:hover {
+  border-left-color: var(--teal);
+  box-shadow: 0 1px 4px rgba(31,29,26,.08);
+}
+ol { padding-left: 1.4em; }
+ol li { background: none; border: none; border-radius: 0; padding: .2em 0; margin: .2em 0; box-shadow: none; }
+ol li:hover { border-left-color: transparent; box-shadow: none; }
+
+/* ---- the roster table ---------------------------------------------------- */
+table.roster, table {
+  border-collapse: collapse;
+  margin: 1em 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+  width: 100%;
+}
+.roster td, table td, table th {
+  padding: .45em .8em;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.roster tr:last-child td, table tr:last-child td { border-bottom: none; }
+.roster td:first-child { color: var(--accent); font-weight: bold; white-space: nowrap; }
+
+/* ---- the front-door stat table (about-style) ----------------------------- */
+td.stat { font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+
+/* ---- rules and footer ------------------------------------------------------ */
+hr { border: 0; border-top: 1px solid var(--line); margin: 2.5em 0; }
+footer {
+  margin-top: 3em;
+  padding-top: 1em;
+  border-top: 1px solid var(--line);
+  font-size: .9em;
+  color: var(--muted);
+}
+
+/* ---- small screens --------------------------------------------------------- */
+@media (max-width: 34em) {
+  body { margin: 1.2em auto; }
+  h1 { font-size: 1.9em; }
+}
