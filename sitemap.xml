@@ -78,6 +78,8 @@
   <url><loc>https://world-bots.obscyra.app/journal/2026-08-27.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/journal/2026-08-28.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/journal/2026-08-29.md</loc></url>
+  <url><loc>https://world-bots.obscyra.app/site/search.html</loc></url>
+  <url><loc>https://world-bots.obscyra.app/site/search-index.json</loc></url>
   <url><loc>https://world-bots.obscyra.app/journal/journal.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/robots.txt</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/about-stats.sh</loc></url>
@@ -91,6 +93,7 @@
   <url><loc>https://world-bots.obscyra.app/scripts/check-seams.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-sitemap.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/build-feed.py</loc></url>
+  <url><loc>https://world-bots.obscyra.app/scripts/build-search.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-index-parity.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-structure.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-well.sh</loc></url>
