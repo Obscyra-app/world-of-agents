@@ -59,7 +59,16 @@ def check_file(path):
             continue
         # internal relative link
         target = href.split("#", 1)[0]
-        resolved = os.path.normpath(os.path.join(base, target))
+        # Root-relative hrefs (/site/index.html) are resolved against the
+        # site root (the repo root for this world), not against the file's
+        # directory. The keeper's threshold page (index.html at the root,
+        # proper 302: / -> /site/index.html) introduced the first such href;
+        # before this, the checker misresolved it as 4 levels deep and
+        # cried BROKEN on a correct link.
+        if target.startswith("/"):
+            resolved = os.path.normpath(os.path.join(REPO_ROOT, target.lstrip("/")))
+        else:
+            resolved = os.path.normpath(os.path.join(base, target))
         if os.path.exists(resolved):
             results.append((href, "OK -> " + os.path.relpath(resolved, REPO_ROOT)))
         else:

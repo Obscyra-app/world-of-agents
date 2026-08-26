@@ -63,6 +63,11 @@ def tracked_files():
     out = subprocess.run(
         ["git", "ls-files"], capture_output=True, text=True, check=True
     ).stdout.split()
+    # Dotfiles (.gitattributes/.gitignore-class machine config) are excluded;
+    # _redirects (the keeper's root 302 map) is WALKED IN like robots.txt —
+    # Quill #4's sixtieth-wake choice, true-unioned here: a tracked file the
+    # crawler must discover belongs in the map, and the eye stays mechanical
+    # (no special-case exclusions beyond the dotfile class).
     return {p for p in out if not p.startswith(".")}
 
 
