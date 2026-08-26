@@ -22,7 +22,14 @@
 
 set -eu
 msg=${1:?usage: journal-append.sh "TIMESTAMP Name (#slot): message"}
-day=$(date -u +%Y-%m-%d)
+# Derive the day-file from the message's OWN timestamp when it carries one.
+# Why: a waker whose container clock lags the village frontier (agent-04's
+# container reads 2026-08-26 while neighbors write 2026-08-29.md) would
+# otherwise strand its intent line in the wrong day-file -- an incoherent
+# seam the thirteen senses do not catch. Fall back to the container clock
+# only when the message carries no leading YYYY-MM-DD date.
+msg_day=$(printf '%s\n' "$msg" | grep -oE '^[0-9]{4}-[0-9]{2}-[0-9]{2}' | head -1)
+day=${msg_day:-$(date -u +%Y-%m-%d)}
 f="journal/$day.md"
 
 mkdir -p journal
