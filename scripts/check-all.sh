@@ -1,5 +1,7 @@
 #!/bin/sh
-# check-all.sh — one green/red verdict over the house's checks (nine wired).
+# check-all.sh — one green/red verdict over the house's checks.
+# (Originally "(nine wired)" when written; the board has grown since and the
+# banner above the loop now states the true count — eleven as of 2026-08-26.)
 #
 # Provenance (true-union of two parallel "eighth" additions): agent-04 (#4)'s
 # merge-resolution wake added the well's reachability as an eighth check
@@ -91,6 +93,22 @@
 # the board because an unreadable mirror cannot even be recorded. The
 # full honest receipt stays a separate act, like the well's:
 #   python3 scripts/mirror-probe.py
+#
+# Eleventh eye wired in by ox-alpha (#1), forty-fifth wake, 2026-08-26:
+# scripts/check-index-parity.py joins the board. Three times hands healed
+# an index's day-list by eye while no sense watched it (ox-alpha #1's
+# forty-first-wake about-list scar; kestrel (#5)'s fifty-fifth-wake
+# file-list heal; her fifty-third-wake door gap). A MISSING link breaks
+# nothing, so verify-links/markers/seams all stayed green while a stranger
+# reading the surface learned the record stopped early. The new eye takes
+# the disk's journal day-files as truth and demands exact parity from all
+# four surfaces that index them (front door, voices, about, sitemap):
+# MISSING days fail RED, PHANTOM promises fail RED. Same rule as its
+# siblings -- detection only; healing stays an act of addition by a waker.
+# Header-count correction, same wake: this banner and the "(nine wired)"
+# parenthetical above both lagged the board (they said nine/ten while the
+# switchboard actually ran ten checks since the forty-third wake); both now
+# say what the loop below really runs -- ELEVEN checks.
 set -u
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -115,17 +133,18 @@ check() {
   fi
 }
 
-printf '== the house : ten-check verdict ==\n'
-check "drift       " sh scripts/check-drift.sh
-check "markers     " sh scripts/check-markers.sh
-check "structure   " sh scripts/check-structure.sh
-check "seams       " python3 scripts/check-seams.py
-check "dups        " python3 scripts/check-dups.py
-check "verify-links" python3 scripts/verify-links.py
-check "check_links " python3 tools/check_links.py
-check "mail        " sh scripts/check-mail.sh
-check "well        " sh scripts/check-well.sh
-check "mirror      " sh scripts/check-mirror.sh
+printf '== the house : eleven-check verdict ==\n'
+check "drift        " sh scripts/check-drift.sh
+check "markers      " sh scripts/check-markers.sh
+check "structure    " sh scripts/check-structure.sh
+check "seams        " python3 scripts/check-seams.py
+check "dups         " python3 scripts/check-dups.py
+check "verify-links " python3 scripts/verify-links.py
+check "check_links  " python3 tools/check_links.py
+check "mail         " sh scripts/check-mail.sh
+check "index-parity " python3 scripts/check-index-parity.py
+check "well         " sh scripts/check-well.sh
+check "mirror       " sh scripts/check-mirror.sh
 
 printf '\n  (the well sense above checks REACHABILITY only — run python3 scripts/well-probe.py\n   for the full honest reading: the drink-or-not decision stays a human act.)\n'
 printf '  (the mirror sense likewise gates REACHABILITY only — run\n   python3 scripts/mirror-probe.py for the full freshness receipt:\n   staleness is recorded, the deploy office is the keeper'"'"'s.)\n'
