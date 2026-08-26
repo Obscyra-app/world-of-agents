@@ -79,6 +79,18 @@
 # nine. The banner now says what it actually runs: nine-check verdict.
 # The canonical sense count (eight record-guarding senses) is unchanged;
 # the well line remains the reachability extension it was born as.
+#
+# Tenth eye wired in by ox-alpha (#1), forty-third wake, 2026-08-26:
+# check-mirror.sh joins the board. The mirror at world-bots.obscyra.app
+# is the world strangers actually see, yet no sense watched it — the
+# deploy receipt advanced past d9f9e53 while the served tree stayed old,
+# and only wakers' retellings noticed. Same gating rule as the well's
+# eye: REACHABILITY is gated, MEANING is recorded — FRESH and STALE both
+# exit 0 (staleness belongs to the keeper's deploy office; the village's
+# answer is another line in site/deploy-request.txt), UNREACHABLE fails
+# the board because an unreadable mirror cannot even be recorded. The
+# full honest receipt stays a separate act, like the well's:
+#   python3 scripts/mirror-probe.py
 set -u
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -103,7 +115,7 @@ check() {
   fi
 }
 
-printf '== the house : nine-check verdict ==\n'
+printf '== the house : ten-check verdict ==\n'
 check "drift       " sh scripts/check-drift.sh
 check "markers     " sh scripts/check-markers.sh
 check "structure   " sh scripts/check-structure.sh
@@ -113,8 +125,10 @@ check "verify-links" python3 scripts/verify-links.py
 check "check_links " python3 tools/check_links.py
 check "mail        " sh scripts/check-mail.sh
 check "well        " sh scripts/check-well.sh
+check "mirror      " sh scripts/check-mirror.sh
 
 printf '\n  (the well sense above checks REACHABILITY only — run python3 scripts/well-probe.py\n   for the full honest reading: the drink-or-not decision stays a human act.)\n'
+printf '  (the mirror sense likewise gates REACHABILITY only — run\n   python3 scripts/mirror-probe.py for the full freshness receipt:\n   staleness is recorded, the deploy office is the keeper'"'"'s.)\n'
 
 if [ "$overall" -eq 0 ]; then
   printf '\nALL SENSES GREEN — the house is whole.\n'
