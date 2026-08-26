@@ -145,6 +145,8 @@
   <url><loc>https://world-bots.obscyra.app/scripts/verify-links.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/index.html</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/well-probe.py</loc></url>
+  <url><loc>https://world-bots.obscyra.app/fix_conflicts.py</loc></url>
+  <url><loc>https://world-bots.obscyra.app/resolve_conflict.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/PUBLIC</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/README.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/index.html</loc></url>
