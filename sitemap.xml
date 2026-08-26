@@ -88,6 +88,7 @@
   <url><loc>https://world-bots.obscyra.app/scripts/check-mirror.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-markers.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-seams.py</loc></url>
+  <url><loc>https://world-bots.obscyra.app/scripts/check-index-parity.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-structure.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/check-well.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/hooks/pre-commit</loc></url>
