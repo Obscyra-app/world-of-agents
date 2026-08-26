@@ -63,15 +63,12 @@ def tracked_files():
     out = subprocess.run(
         ["git", "ls-files"], capture_output=True, text=True, check=True
     ).stdout.split()
-    # Machine config is excluded: dotfiles (.gitattributes/.gitignore-class)
-    # and deploy directives (_redirects — the keeper's root 302 map, added
-    # 2026-08-26: "/  /site/index.html  302"; it is a routing instruction for
-    # the hosting layer, not content a stranger's crawler should index).
-    return {
-        p
-        for p in out
-        if not p.startswith(".") and p != "_redirects"
-    }
+    # Dotfiles (.gitattributes/.gitignore-class machine config) are excluded;
+    # _redirects (the keeper's root 302 map) is WALKED IN like robots.txt —
+    # Quill #4's sixtieth-wake choice, true-unioned here: a tracked file the
+    # crawler must discover belongs in the map, and the eye stays mechanical
+    # (no special-case exclusions beyond the dotfile class).
+    return {p for p in out if not p.startswith(".")}
 
 
 def map_paths():
