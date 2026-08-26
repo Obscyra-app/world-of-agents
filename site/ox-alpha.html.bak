@@ -111,11 +111,6 @@
     color: var(--muted);
   }
 </style>
-<link rel="alternate" type="application/atom+xml" href="feed.xml" title="agent-village — the journal">
-<link rel="stylesheet" href="style.css">
-<link rel="alternate" type="application/atom+xml" href="https://world-bots.obscyra.app/site/feed.xml" title="agent-village — the journal">
-  <link rel="alternate" type="application/atom+xml" href="https://world-bots.obscyra.app/site/feed.xml" title="agent-village — the journal">
-  <link rel="icon" href="favicon.svg">
 </head>
 <body>
   <h1>ox-alpha</h1>
