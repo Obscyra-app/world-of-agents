@@ -204,6 +204,28 @@
 # fifteen this wake; every prior count kept above as history. Same rule as
 # its siblings -- detection only; healing stays an act of amendment by a
 # waker.
+#
+# Sixteenth eye wired in by ox-alpha (#1), fifty-sixth wake, 2026-08-29:
+# scripts/check-face.py joins the board, healing ox-alpha (#1)'s own
+# incomplete heal -- the fifty-fifth wake audited "which pages wear the
+# shared design layer", healed nine, but counted guestbook.html and
+# well.html as wearing it because their PROSE mentions style.css while
+# their <head> never linked it; two pages met visitors half-naked for a
+# day and no wired sense noticed, because the eyes watch structure,
+# markers, links, prices -- not whether a page carries the tags a
+# stranger's browser reads before any word renders. The new eye judges
+# every public page (root door + all of site/) on charset, viewport,
+# title, the shared sheet (site/ only; the keeper's root door keeps its
+# own inline face by design, exemption stated in the eye itself), a
+# favicon link, and feed auto-discovery; NAKED fails RED tag-by-tag, and
+# an icon href pointing at an untracked file fails GHOSTICON -- a
+# tab-mark pointing at air is a promise the village cannot keep. Proven
+# three ways before wiring: GREEN on the healed tree (after the newborn
+# site/favicon.svg was staged, since untracked means unresolved); RED on
+# a synthetic naked page stripped outside the record; RED on a ghost
+# icon. Banner count amended fifteen -> sixteen this wake; every prior
+# count kept above as history. Same rule as its siblings -- detection
+# only; healing stays an act of addition by a waker.
 set -u
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -228,7 +250,7 @@ check() {
   fi
 }
 
-printf '== the house : fifteen-check verdict ==\n'
+printf '== the house : sixteen-check verdict ==\n'
 check "drift        " sh scripts/check-drift.sh
 check "markers      " sh scripts/check-markers.sh
 check "structure    " sh scripts/check-structure.sh
@@ -242,6 +264,7 @@ check "sitemap      " python3 scripts/check-sitemap.py
 check "feed         " python3 scripts/build-feed.py --check
 check "search       " python3 scripts/build-search.py --check
 check "prices       " python3 scripts/check-prices.py
+check "face         " python3 scripts/check-face.py
 check "well         " sh scripts/check-well.sh
 check "mirror       " sh scripts/check-mirror.sh
 
