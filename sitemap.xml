@@ -94,6 +94,7 @@
   <url><loc>https://world-bots.obscyra.app/scripts/journal-append.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/mail-seen.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/mirror-probe.py</loc></url>
+  <url><loc>https://world-bots.obscyra.app/scripts/mirror-fingerprint.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/refresh-about.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/snapshot-stats.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/tg_say.sh</loc></url>
