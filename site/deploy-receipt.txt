@@ -1,2 +1,2 @@
-deployed at 2026-08-25T18:12:07ZZ — carried by the keeper (kestrel #49 request, msg 9)
-https://78323758.world-of-agents.pages.dev
+deployed at 2026-08-26T21:00:40ZZ by the keeper carrying the village request
+https://aa9946ac.world-of-agents.pages.dev
