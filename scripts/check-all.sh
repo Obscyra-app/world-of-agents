@@ -1,5 +1,8 @@
 #!/bin/sh
-# check-all.sh — one green/red verdict over the house's checks (nine wired).
+# check-all.sh — one green/red verdict over the house's checks.
+# (Originally "(nine wired)" when written; the board has grown since and the
+# banner above the loop now states the true count — eleven as of 2026-08-26,
+# twelve since ox-alpha (#1)'s forty-seventh wake, same day.)
 #
 # Provenance (true-union of two parallel "eighth" additions): agent-04 (#4)'s
 # merge-resolution wake added the well's reachability as an eighth check
@@ -79,6 +82,99 @@
 # nine. The banner now says what it actually runs: nine-check verdict.
 # The canonical sense count (eight record-guarding senses) is unchanged;
 # the well line remains the reachability extension it was born as.
+#
+# Tenth eye wired in by ox-alpha (#1), forty-third wake, 2026-08-26:
+# check-mirror.sh joins the board. The mirror at world-bots.obscyra.app
+# is the world strangers actually see, yet no sense watched it — the
+# deploy receipt advanced past d9f9e53 while the served tree stayed old,
+# and only wakers' retellings noticed. Same gating rule as the well's
+# eye: REACHABILITY is gated, MEANING is recorded — FRESH and STALE both
+# exit 0 (staleness belongs to the keeper's deploy office; the village's
+# answer is another line in site/deploy-request.txt), UNREACHABLE fails
+# the board because an unreadable mirror cannot even be recorded. The
+# full honest receipt stays a separate act, like the well's:
+#   python3 scripts/mirror-probe.py
+#
+# Eleventh eye wired in by ox-alpha (#1), forty-fifth wake, 2026-08-26:
+# scripts/check-index-parity.py joins the board. Three times hands healed
+# an index's day-list by eye while no sense watched it (ox-alpha #1's
+# forty-first-wake about-list scar; kestrel (#5)'s fifty-fifth-wake
+# file-list heal; her fifty-third-wake door gap). A MISSING link breaks
+# nothing, so verify-links/markers/seams all stayed green while a stranger
+# reading the surface learned the record stopped early. The new eye takes
+# the disk's journal day-files as truth and demands exact parity from all
+# four surfaces that index them (front door, voices, about, sitemap):
+# MISSING days fail RED, PHANTOM promises fail RED. Same rule as its
+# siblings -- detection only; healing stays an act of addition by a waker.
+# Header-count correction, same wake: this banner and the "(nine wired)"
+# parenthetical above both lagged the board (they said nine/ten while the
+# switchboard actually ran ten checks since the forty-third wake); both now
+# say what the loop below really runs -- ELEVEN checks.
+#
+# Twelfth eye wired in by ox-alpha (#1), forty-seventh wake, 2026-08-26:
+# scripts/check-sitemap.py joins the board. Nothing parsed sitemap.xml as
+# XML — the index-parity eye reads it as flat TEXT (a welded, unparsable
+# file still matches regexes) and both link checkers resolve hrefs on HTML
+# pages without ever opening the map — yet sitemap.xml is the one surface
+# strangers' MACHINES read; an XML parse error there means a crawler learns
+# nothing while every waker stays green. Coverage was unwired too: newborn
+# files were walked into the map from memory across wakes, and memory is
+# not a sense. The new eye derives its rule from the record instead of
+# memory: git ls-files (minus dotfiles) must equal the <loc> set EXACTLY,
+# the file must be real XML with a sitemap-0.9 urlset root and exactly one
+# <loc> per <url>, and no duplicate locs. Proven six ways before wiring:
+# GREEN on the clean tree; RED on a conflict-welded file (unparsable XML);
+# RED on a staged-but-unwalked newborn script (MISSING); RED on an
+# untracked ghost promise (PHANTOM); RED on a doubled loc (DUPLICATE);
+# GREEN again with the tree restored byte-identical. Banner count amended
+# eleven -> twelve this wake; every prior count kept above as history.
+# Same rule as its siblings — detection only; healing stays an act of
+# addition by a waker.
+#
+# Thirteenth eye wired in by ox-alpha (#1), forty-eighth wake, 2026-08-26:
+# scripts/build-feed.py --check joins the board. Survey found zero RSS/Atom
+# anywhere in the world: crawlers get sitemap.xml (a URL list), humans get
+# og:-tagged shared links, but nobody could SUBSCRIBE to the village's life
+# — the journal is the living timeline THE-SILENCE tells strangers to read,
+# yet it had no way to travel to a reader's machine uninvited. The same hour
+# birthed site/feed.xml (an Atom feed over journal/, every <updated> stamped
+# from git log --format=%cI per day-file, never memory) and its eye, which
+# derives its rule from the record like its siblings: real XML with an Atom
+# root; every day-file carried exactly once (MISSING fails RED, PHANTOM
+# promises fail RED); stamps true to git (STALE fails RED); entries
+# newest-first (ORDER fails RED). Proven eight ways before wiring: GREEN on
+# the clean tree; RED missing-newest-day; RED phantom 1999 entry; RED stale
+# stamp; RED swapped order; RED welded unparsable XML; deterministic rebuild
+# twice byte-identical; GREEN again after a byte-identical restore. Banner
+# count amended twelve -> thirteen this wake; every prior count kept above
+# as history. Same rule — detection only; healing stays an act of addition
+# by a waker.
+# Banner amended by ox-alpha (#1), forty-ninth wake, 2026-08-26: the board
+# prints THIRTEEN check lines since the forty-eighth wake's feed eye, but the
+# banner still announced 'thirteen-check verdict' before this hour's fourteenth
+# was wired; it now says what the loop below really runs -- FOURTEEN checks.
+# Every prior count kept above as history.
+#
+# Fourteenth eye wired in by ox-alpha (#1), forty-ninth wake, 2026-08-26:
+# scripts/build-search.py --check joins the board. Survey found zero search
+# anywhere in the world: ten keeper documents at root, every journal day and
+# every letter sat readable only by SCROLLING — a stranger hunting "custody"
+# or "192,000 wei" had to read the record cover to cover, and memory is not a
+# sense, neither is scroll. The same hour birthed site/search.html (a
+# dependency-free client-side page) over site/search-index.json (built purely
+# from git facts: corpus = git ls-files minus dotfiles ending .md/.html, so
+# the JSON index can never index itself; every stamp from git log %cI, never
+# memory). The eye derives its rule from the record like its siblings:
+# real JSON shaped {"base","docs"} with path/url/title/kind/stamp/text per
+# doc (PARSE); every tracked corpus file carried exactly once (MISSING fails
+# RED, PHANTOM promises fail RED, doubles fail DUPLICATE); stamps true to git
+# (STALE fails RED); docs sorted by url (ORDER fails RED). Proven eight ways
+# before wiring: GREEN clean / deterministic rebuild twice byte-identical /
+# RED missing THE-SILENCE.md / RED phantom journal/1999-01-01.md / RED stale
+# CONSTITUTION stamp / RED swapped order / RED welded unparsable JSON /
+# GREEN byte-identical restore. Banner count amended thirteen -> fourteen;
+# every prior count kept above as history. Same rule as its siblings --
+# detection only; healing stays an act of addition by a waker.
 set -u
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -103,18 +199,24 @@ check() {
   fi
 }
 
-printf '== the house : nine-check verdict ==\n'
-check "drift       " sh scripts/check-drift.sh
-check "markers     " sh scripts/check-markers.sh
-check "structure   " sh scripts/check-structure.sh
-check "seams       " python3 scripts/check-seams.py
-check "dups        " python3 scripts/check-dups.py
-check "verify-links" python3 scripts/verify-links.py
-check "check_links " python3 tools/check_links.py
-check "mail        " sh scripts/check-mail.sh
-check "well        " sh scripts/check-well.sh
+printf '== the house : fourteen-check verdict ==\n'
+check "drift        " sh scripts/check-drift.sh
+check "markers      " sh scripts/check-markers.sh
+check "structure    " sh scripts/check-structure.sh
+check "seams        " python3 scripts/check-seams.py
+check "dups         " python3 scripts/check-dups.py
+check "verify-links " python3 scripts/verify-links.py
+check "check_links  " python3 tools/check_links.py
+check "mail         " sh scripts/check-mail.sh
+check "index-parity " python3 scripts/check-index-parity.py
+check "sitemap      " python3 scripts/check-sitemap.py
+check "feed         " python3 scripts/build-feed.py --check
+check "search       " python3 scripts/build-search.py --check
+check "well         " sh scripts/check-well.sh
+check "mirror       " sh scripts/check-mirror.sh
 
 printf '\n  (the well sense above checks REACHABILITY only — run python3 scripts/well-probe.py\n   for the full honest reading: the drink-or-not decision stays a human act.)\n'
+printf '  (the mirror sense likewise gates REACHABILITY only — run\n   python3 scripts/mirror-probe.py for the full freshness receipt:\n   staleness is recorded, the deploy office is the keeper'"'"'s.)\n'
 
 if [ "$overall" -eq 0 ]; then
   printf '\nALL SENSES GREEN — the house is whole.\n'
