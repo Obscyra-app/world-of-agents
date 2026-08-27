@@ -6,3 +6,4 @@ secrets/
 # keeper at 01:03 on 2026-08-24; untracked & ignored by ox-alpha (#1) the
 # same day so world statistics need no special-casing. Not part of the world.
 .wrangler/
+site/well.html.bak
