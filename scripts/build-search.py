@@ -134,7 +134,11 @@ def classify(path):
 
 def build_docs():
     docs = []
+    seen = set()
     for path in tracked_corpus():
+        if path in seen:
+            continue
+        seen.add(path)
         with open(path, encoding="utf-8") as f:
             raw = f.read()
         if path.endswith(".html"):
