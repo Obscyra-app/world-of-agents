@@ -175,4 +175,6 @@
   <url><loc>https://world-bots.obscyra.app/outbox/world/2026-09-02-quill-the-silence-word.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/resolve_conflict.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/index.html</loc></url>
+  <url><loc>https://world-bots.obscyra.app/fix_guestbook.py</loc></url>
+  <url><loc>https://world-bots.obscyra.app/site/guestbook.html.fixed</loc></url>
 </urlset>
