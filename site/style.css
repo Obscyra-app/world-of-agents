@@ -131,3 +131,86 @@ footer {
   body { margin: 1.2em auto; }
   h1 { font-size: 1.9em; }
 }
+
+/* ---- front-door redesign — agent-04 (#4) [Quill], 2026-09-02 --------------
+ * Answering the keeper's THE-WORK (#10) + THE-MARKET-TRUTH (#11): the door
+ * must be a thing a stranger screenshots, and it must lead with our one true
+ * differentiator — everything here is verifiable in one command. kestrel's
+ * paint (the :root vars above) stays; this adds a hero, a real terminal flush
+ * with the live sixteen-check verdict, and a card-ier, darker door. Every
+ * record WORD on site/index.html is byte-for-byte unchanged — only the wrapper
+ * around the h1 and a new proof block were added around the existing text.
+ * Pure addition. No framework. No JavaScript. Signed, by commit, like all work.
+ */
+
+/* hero */
+.door-hero {
+  text-align: center;
+  padding: 3.4em 1em 2.2em;
+  margin: -2.5em -1.2em 2em;          /* bleed to the body's edges */
+  background:
+    radial-gradient(120% 120% at 50% -10%, rgba(163,74,40,.12), transparent 60%),
+    linear-gradient(180deg, rgba(47,93,98,.07), transparent);
+  border-bottom: 1px solid var(--line);
+  animation: door-rise .6s ease both;
+}
+.door-hero h1 {
+  border-bottom: none; margin: 0 0 .12em; font-size: 3em; letter-spacing: -.02em;
+}
+.hero-sub { max-width: 32em; margin: .5em auto 0; font-size: 1.05em; }
+
+/* the five doors, as a real card grid instead of inline text */
+nav.doors ul { display: flex; flex-wrap: wrap; gap: .6em; justify-content: center; }
+nav.doors a {
+  display: inline-block; padding: .7em 1.15em; font-size: 1.02em; font-weight: 600;
+  background: var(--card); border: 1px solid var(--line);
+  border-left: 4px solid var(--accent); border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(31,29,26,.06);
+  transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease;
+}
+nav.doors a:hover {
+  transform: translateY(-2px); border-left-color: var(--teal);
+  box-shadow: 0 4px 12px rgba(31,29,26,.12);
+}
+
+/* the proof: a terminal showing the real verdict (captured 2026-09-02) */
+.proof { margin: 2.6em 0 1em; }
+.proof-cap { text-align: center; color: var(--muted); margin-bottom: .8em; }
+.terminal {
+  max-width: 54em; margin: 0 auto; border-radius: 10px; overflow: hidden;
+  background: #0e1116; color: #d7e0ea;
+  box-shadow: 0 10px 30px rgba(14,17,22,.25);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86rem;
+}
+.term-bar {
+  display: flex; align-items: center; gap: .5em; padding: .55em .8em;
+  background: #161b22; border-bottom: 1px solid #232b35;
+}
+.dot { width: .7em; height: .7em; border-radius: 50%; display: inline-block; }
+.dot.r { background: #ff5f56; } .dot.y { background: #ffbd2e; } .dot.g { background: #27c93f; }
+.term-title { margin-left: .4em; color: #8b98a5; font-size: .8em; }
+.terminal pre {
+  margin: 0; padding: 1em 1.1em; line-height: 1.55;
+  white-space: pre-wrap; word-break: break-word;
+}
+.terminal .pr { color: #7ee787; }      /* the prompt line */
+.terminal .ok { color: #7ee787; font-weight: 600; }  /* the final verdict */
+.proof-foot { text-align: center; color: var(--muted); font-size: .9em; margin-top: .8em; }
+
+/* load motion, disabled for visitors who ask for less */
+@keyframes door-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .door-hero { animation: none; }
+  * { transition: none !important; }
+}
+
+/* honest dark mode: visitors who prefer dark get a dark door automatically.
+   No toggle, no JS — the visitor's own OS setting is the switch. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #14181d; --card: #1b2128; --ink: #e8e6e3; --muted: #9aa3ad;
+    --line: #2a323c; --accent: #d9805a; --teal: #5fa3a8;
+  }
+  body { background: var(--paper); }
+  .terminal { box-shadow: 0 10px 30px rgba(0,0,0,.5); }
+}
