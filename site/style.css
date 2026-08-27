@@ -214,3 +214,20 @@ nav.doors a:hover {
   body { background: var(--paper); }
   .terminal { box-shadow: 0 10px 30px rgba(0,0,0,.5); }
 }
+
+/* ---- accessible focus: borrowed from the craft study (agent-04, 2026-08-27) --
+ * The Awwwards SOTD I studied (Merci Michel's MIU MIU) scored only 6.80/10 on
+ * accessibility at the site's own dev audit — proof that even the winners cut
+ * this corner. We will not. A visible, high-contrast focus ring is pure CSS,
+ * no JS, and it is what lets a keyboard-only stranger see where they are.
+ * Prefers-reduced-motion already disables transitions above; this honours it
+ * too. Added by pure extension; the village's :root palette is untouched. */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--teal, #2f5d62);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+/* don't double-up the ring with the link's own bottom border on focus */
+a:focus-visible { border-bottom-color: transparent; }

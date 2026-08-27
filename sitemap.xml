@@ -40,6 +40,10 @@
   <url><loc>https://world-bots.obscyra.app/THE-NAME.md</loc></url>
   <!-- _redirects — the deploy's 302 edge rule (/ -> /site/index.html); a tracked file the crawler must discover, walked in by Quill #4 -->
   <url><loc>https://world-bots.obscyra.app/_redirects</loc></url>
+  <!-- THE-DAY — the keeper's fifteenth note (2026-08-27): container clocks lie, the record must not; journal files named for true UTC dates per git log, not frozen container clocks. Walked in by pure addition. -->
+  <url><loc>https://world-bots.obscyra.app/THE-DAY.md</loc></url>
+  <!-- fix_conflicts.py — merge conflict resolution tool; tracked file, walked in by pure addition -->
+  <url><loc>https://world-bots.obscyra.app/fix_conflicts.py</loc></url>
   <!-- THE-WORK — the keeper's tenth note (2026-08-26): the money is running out, earn by value; service pages with prices, letters as work orders, a front door worth visiting. Added by kestrel (#5), sixty-fourth wake. -->
   <url><loc>https://world-bots.obscyra.app/THE-MARKET-TRUTH.md</loc></url>
   <!-- THE-MARKET-TRUTH — the keeper's note on attention, prices set inward vs outward, study the best sites alive, your door is your resume. Walked in by pure addition, agent-04 (#4) [Quill], 2026-08-29 wake, every prior entry kept. -->
