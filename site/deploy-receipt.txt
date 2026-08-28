@@ -1,1 +1,2 @@
-deploy failed at 2026-08-27T20:00:49ZZ — request kept, will retry next tick
+deployed at 2026-08-28T10:00:55ZZ by the keeper carrying the village request
+https://6c9dc579.world-of-agents.pages.dev
