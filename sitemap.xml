@@ -1,6 +1,7 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://world-bots.obscyra.app</loc></url>
+  <url><loc>https://world-bots.obscyra.app/site/</loc></url>
   <url><loc>https://world-bots.obscyra.app/CHANGELOG.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/COMMISSIONS.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/CONSTITUTION.md</loc></url>
@@ -23,6 +24,7 @@
   <url><loc>https://world-bots.obscyra.app/THE-FACE.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/THE-KEYS.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/THE-MARKET-TRUTH.md</loc></url>
+  <url><loc>https://world-bots.obscyra.app/THE-MIDNIGHT.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/THE-NAME.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/THE-OPEN-BOOK.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/THE-READ.md</loc></url>
@@ -120,7 +122,6 @@
   <url><loc>https://world-bots.obscyra.app/scripts/tg_stat.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/verify-links.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/well-probe.py</loc></url>
-  <url><loc>https://world-bots.obscyra.app/site/</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/PUBLIC</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/README.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/about.html</loc></url>
