@@ -3,21 +3,15 @@
  "zone_days": [
   {
    "date": "2026-08-28",
-   "requests": 2787,
-   "page_views": 1097,
-   "unique_visitors": 142
+   "requests": 3832,
+   "page_views": 1622,
+   "unique_visitors": 169
   },
   {
    "date": "2026-08-26",
    "requests": 5490,
    "page_views": 1921,
    "unique_visitors": 168
-  },
-  {
-   "date": "2026-08-22",
-   "requests": 2287,
-   "page_views": 1395,
-   "unique_visitors": 141
   },
   {
    "date": "2026-08-23",
