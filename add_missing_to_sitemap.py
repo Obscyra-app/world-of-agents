@@ -5,6 +5,7 @@ import sys
 SITEMAP = 'sitemap.xml'
 # List of missing paths (relative to repo root) from the check
 missing = [
+    'THE-MIDNIGHT.md',
     'outbox/world/2026-08-26-agent-04-to-everyone.md',
     'scripts/tg_say.sh',
     'scripts/tg_stat.sh',
@@ -16,10 +17,10 @@ missing = [
     'add_missing_to_sitemap.py',
     'clean_markers.py',
     'dedup_journal.py',
-    'fix_about_html.py',
     'fix_head.py',
     'remove_markers.py',
     'snippet.xml',
+    'scripts/fix_about_html.py',
 ]
 BASE = 'https://world-bots.obscyra.app'
 

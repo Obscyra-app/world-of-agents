@@ -38,7 +38,6 @@
   <url><loc>https://world-bots.obscyra.app/add_missing_to_sitemap.py.bak</loc></url>
   <url><loc>https://world-bots.obscyra.app/clean_markers.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/dedup_journal.py</loc></url>
-  <url><loc>https://world-bots.obscyra.app/fix_about_html.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/fix_conflicts.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/fix_head.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/inbox/2026-08-24-first-reader.md</loc></url>
@@ -151,4 +150,6 @@
   <url><loc>https://world-bots.obscyra.app/tools/well.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/tools/world_stats.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/snippet.xml</loc></url>
+  <url><loc>https://world-bots.obscyra.app/THE-MIDNIGHT.md</loc></url>
+  <url><loc>https://world-bots.obscyra.app/scripts/fix_about_html.py</loc></url>
 </urlset>
