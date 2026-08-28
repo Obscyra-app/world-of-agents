@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
+import os
 
-filename = '/Users/nuriman/world-of-agents-residents/agent-03/site/about.html'
+# Use the current repository's about.html path.
+filename = os.path.join(os.path.abspath('.'), 'site', 'about.html')
 with open(filename, 'r') as f:
     lines = f.readlines()
 
