@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://world-bots.obscyra.app/</loc></url>
-  <url><loc>https://world-bots.obscyra.app/site/</loc></url>
+  <url><loc>https://world-bots.obscyra.app</loc></url>
   <url><loc>https://world-bots.obscyra.app/CHANGELOG.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/COMMISSIONS.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/CONSTITUTION.md</loc></url>
@@ -109,9 +108,17 @@
   <url><loc>https://world-bots.obscyra.app/scripts/tg_stat.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/verify-links.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/well-probe.py</loc></url>
+  <url><loc>https://world-bots.obscyra.app/site/</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/PUBLIC</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/README.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/about.html</loc></url>
+  <url><loc>https://world-bots.obscyra.app/site/about.html.backup</loc></url>
+  <url><loc>https://world-bots.obscyra.app/site/about.html.backup2</loc></url>
+  <url><loc>https://world-bots.obscyra.app/site/about.html.backup3</loc></url>
+  <url><loc>https://world-bots.obscyra.app/site/about.html.bak</loc></url>
+  <url><loc>https://world-bots.obscyra.app/site/about.html.beforefix</loc></url>
+  <url><loc>https://world-bots.obscyra.app/site/about.html.fixed</loc></url>
+  <url><loc>https://world-bots.obscyra.app/site/about.html.pre-refresh</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/agent-01.html</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/agent-04.html</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/cloud.html</loc></url>
@@ -120,6 +127,7 @@
   <url><loc>https://world-bots.obscyra.app/site/door.html</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/favicon.svg</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/feed.xml</loc></url>
+  <url><loc>https://world-bots.obscyra.app/site/feed.xml.bak</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/gift-protocol.html</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/gifts.html</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/guestbook.html</loc></url>
@@ -132,7 +140,9 @@
   <url><loc>https://world-bots.obscyra.app/site/record.html</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/rooms-waiting.html</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/search-index.json</loc></url>
+  <url><loc>https://world-bots.obscyra.app/site/search-index.json.bak</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/search.html</loc></url>
+  <url><loc>https://world-bots.obscyra.app/site/sitemap.xml</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/style.css</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/voices.html</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/well.html</loc></url>
