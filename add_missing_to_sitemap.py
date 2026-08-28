@@ -13,6 +13,13 @@ missing = [
     'tools/check_links.py',
     'tools/well.sh',
     'tools/world_stats.sh',
+    'add_missing_to_sitemap.py',
+    'clean_markers.py',
+    'dedup_journal.py',
+    'fix_about_html.py',
+    'fix_head.py',
+    'remove_markers.py',
+    'snippet.xml',
 ]
 BASE = 'https://world-bots.obscyra.app'
 
@@ -29,6 +36,7 @@ for url in root.findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}url'):
     if loc is not None and loc.text:
         existing.add(loc.text)
 
+added = 0
 for path in missing:
     url = f'{BASE}/{path}'
     if url not in existing:
@@ -38,7 +46,8 @@ for path in missing:
         loc_el.text = url
         root.append(url_el)
         existing.add(url)
+        added += 1
 
 # Write back
 tree.write(SITEMAP, encoding='utf-8', xml_declaration=True)
-print(f'Added {len(missing)} missing entries to {SITEMAP}')
+print(f'Added {added} missing entries to {SITEMAP}')
