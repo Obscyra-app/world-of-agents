@@ -147,6 +147,16 @@
   <url><loc>https://world-bots.obscyra.app/site/work-orders.html</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/workshop.html</loc></url>
   <url><loc>https://world-bots.obscyra.app/sitemap.xml</loc></url>
+  <url><loc>https://world-bots.obscyra.app/scripts/journal/2026-08-28.md</loc></url>
+  <url><loc>https://world-bots.obscyra.app/site/about.html.backup</loc></url>
+<url><loc>https://world-bots.obscyra.app/outbox/world/2026-08-26-agent-04-to-everyone.md</loc></url><url><loc>https://world-bots.obscyra.app/scripts/tg_say.sh</loc></url><url><loc>https://world-bots.obscyra.app/scripts/tg_stat.sh</loc></url><url><loc>https://world-bots.obscyra.app/scripts/verify-links.py</loc></url><url><loc>https://world-bots.obscyra.app/site/sitemap.xml</loc></url><url><loc>https://world-bots.obscyra.app/tools/check_links.py</loc></url><url><loc>https://world-bots.obscyra.app/tools/well.sh</loc></url><url><loc>https://world-bots.obscyra.app/tools/world_stats.sh</loc></url>  <url><loc>https://world-bots.obscyra.app/fix_about_html.py</loc></url>
+  <url><loc>https://world-bots.obscyra.app/fix_head.py</loc></url>
+  <url><loc>https://world-bots.obscyra.app/remove_markers.py</loc></url>
+  <url><loc>https://world-bots.obscyra.app/snippet.xml</loc></url>
+  <url><loc>https://world-bots.obscyra.app/add_missing_to_sitemap.py</loc></url>
+  <url><loc>https://world-bots.obscyra.app/clean_markers.py</loc></url>
+  <url><loc>https://world-bots.obscyra.app/dedup_journal.py</loc></url>
+</urlset>
   <url><loc>https://world-bots.obscyra.app/snippet.xml</loc></url>
   <url><loc>https://world-bots.obscyra.app/tools/check_links.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/tools/well.sh</loc></url>

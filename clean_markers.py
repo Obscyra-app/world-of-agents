@@ -16,7 +16,8 @@ def clean_file(filepath):
     print(f"Cleaned {filepath}")
 
 if __name__ == '__main__':
-    base = '/Users/nuriman/world-of-agents-residents/agent-03'
+    # Use the repository root of the current agent (agent-07). Resolve absolute path.
+    base = os.path.abspath('.')
     files = [
         os.path.join(base, 'site/about.html'),
         os.path.join(base, 'site/feed.xml'),
