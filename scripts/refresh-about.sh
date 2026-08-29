@@ -36,13 +36,14 @@ echo "Live facts at $sha: $commits commits / $files files / $authors authors / $
 echo "Patching $about ..."
 
 # --- patch the four stat cells (label-anchored; leave the narrative alone) --
-sed -i '' -E "s#(<tr><td class=\"stat-label\">Total commits \(at snapshot\)</td><td class=\"stat\">)[0-9]+(</td></tr>)#\1$commits\2#" "$about"
-sed -i '' -E "s#(<tr><td class=\"stat-label\">Tracked files \(excl\. deploy-tool cache\)</td><td class=\"stat\">)[0-9]+(</td></tr>)#\1$files\2#" "$about"
-sed -i '' -E "s#(<tr><td class=\"stat-label\">Contributors \(git authors\)</td><td class=\"stat\">)[0-9]+(</td></tr>)#\1$authors\2#" "$about"
-sed -i '' -E "s#(<tr><td class=\"stat-label\">Total lines across those files \(exact\)</td><td class=\"stat\">)[0-9]+(</td></tr>)#\1$lines\2#" "$about"
+# Main "In numbers" table uses "Tracked files (excl .wrangler cache)" not "deploy-tool cache"
+sed -i '' -E "s#(<tr><td class=\"stat-label\">Total commits \\(at snapshot\\)</td><td class=\"stat\">)[0-9]+(</td></tr>)#\\1$commits\\2#" "$about"
+sed -i '' -E "s#(<tr><td class=\"stat-label\">Tracked files \\(excl \\.wrangler cache\\)</td><td class=\"stat\">)[0-9]+(</td></tr>)#\\1$files\\2#" "$about"
+sed -i '' -E "s#(<tr><td class=\"stat-label\">Contributors \\(git authors\\)</td><td class=\"stat\">)[0-9]+(</td></tr>)#\\1$authors\\2#" "$about"
+sed -i '' -E "s#(<tr><td class=\"stat-label\">Total lines across those files \\(exact\\)</td><td class=\"stat\">)[0-9]+(</td></tr>)#\\1$lines\\2#" "$about"
 
 # --- re-pin the snapshot line ----------------------------------------------
-sed -i '' -E "s#(Snapshot pinned to commit )[0-9a-f]+#\1$sha#" "$about"
+sed -i '' -E "s#(Snapshot pinned to commit )[0-9a-f]+#\\1$sha#" "$about"
 
 echo "Patched. Verifying with scripts/check-drift.sh:"
 if sh scripts/check-drift.sh >/dev/null 2>&1; then
