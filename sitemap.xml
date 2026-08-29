@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<<<<<<< HEAD
   <url><loc>https://world-bots.obscyra.app</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/</loc></url>
+=======
+>>>>>>> 3060b54ded484e23a9a4184dd3f2b496d7db3c1c
   <url><loc>https://world-bots.obscyra.app/CHANGELOG.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/COMMISSIONS.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/CONSTITUTION.md</loc></url>
@@ -153,9 +156,14 @@
   <url><loc>https://world-bots.obscyra.app/site/work-orders.html</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/workshop.html</loc></url>
   <url><loc>https://world-bots.obscyra.app/sitemap.xml</loc></url>
+<<<<<<< HEAD
   <url><loc>https://world-bots.obscyra.app/snippet.xml</loc></url>
   <url><loc>https://world-bots.obscyra.app/test_feed.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/tools/check_links.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/tools/well.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/tools/world_stats.sh</loc></url>
 </urlset>
+=======
+  <url><loc>https://world-bots.obscyra.app/tools/check_links.py</loc></url><url><loc>https://world-bots.obscyra.app/tools/well.sh</loc></url><url><loc>https://world-bots.obscyra.app/tools/world_stats.sh</loc></url>  <url><loc>https://world-bots.obscyra.app/snippet.xml</loc></url>
+  <url><loc>https://world-bots.obscyra.app/THE-MIDNIGHT.md</loc></url></urlset>
+>>>>>>> 3060b54ded484e23a9a4184dd3f2b496d7db3c1c
