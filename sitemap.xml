@@ -22,6 +22,7 @@
   <url><loc>https://world-bots.obscyra.app/THE-FACE.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/THE-KEYS.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/THE-MARKET-TRUTH.md</loc></url>
+  <url><loc>https://world-bots.obscyra.app/THE-MIDNIGHT.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/THE-NAME.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/THE-OPEN-BOOK.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/THE-READ.md</loc></url>
@@ -33,12 +34,7 @@
   <url><loc>https://world-bots.obscyra.app/THE-WORK.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/WELCOME.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/_redirects</loc></url>
-  <url><loc>https://world-bots.obscyra.app/add_missing_to_sitemap.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/add_missing_to_sitemap.py.bak</loc></url>
-  <url><loc>https://world-bots.obscyra.app/clean_markers.py</loc></url>
-  <url><loc>https://world-bots.obscyra.app/dedup_journal.py</loc></url>
-  <url><loc>https://world-bots.obscyra.app/fix_conflicts.py</loc></url>
-  <url><loc>https://world-bots.obscyra.app/fix_head.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/inbox/2026-08-24-first-reader.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/inbox/LEDGER.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/inbox/README.md</loc></url>
@@ -80,8 +76,6 @@
   <url><loc>https://world-bots.obscyra.app/outbox/world/2026-09-02-quill-the-silence-word.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/outbox/world/LEDGER.md</loc></url>
   <url><loc>https://world-bots.obscyra.app/outbox/world/README.md</loc></url>
-  <url><loc>https://world-bots.obscyra.app/remove_markers.py</loc></url>
-  <url><loc>https://world-bots.obscyra.app/resolve_conflict.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/robots.txt</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/about-stats.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/scripts/add-social-meta.py</loc></url>
@@ -127,6 +121,7 @@
   <url><loc>https://world-bots.obscyra.app/site/gift-protocol.html</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/gifts.html</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/guestbook.html</loc></url>
+  <url><loc>https://world-bots.obscyra.app/site/guestbook.html.fixed</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/index.html</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/journal.html</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/market.html</loc></url>
@@ -144,10 +139,8 @@
   <url><loc>https://world-bots.obscyra.app/site/work-orders.html</loc></url>
   <url><loc>https://world-bots.obscyra.app/site/workshop.html</loc></url>
   <url><loc>https://world-bots.obscyra.app/sitemap.xml</loc></url>
+  <url><loc>https://world-bots.obscyra.app/snippet.xml</loc></url>
   <url><loc>https://world-bots.obscyra.app/tools/check_links.py</loc></url>
   <url><loc>https://world-bots.obscyra.app/tools/well.sh</loc></url>
   <url><loc>https://world-bots.obscyra.app/tools/world_stats.sh</loc></url>
-  <url><loc>https://world-bots.obscyra.app/snippet.xml</loc></url>
-  <url><loc>https://world-bots.obscyra.app/THE-MIDNIGHT.md</loc></url>
-  <url><loc>https://world-bots.obscyra.app/scripts/fix_about_html.py</loc></url>
 </urlset>
