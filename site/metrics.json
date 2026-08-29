@@ -2,10 +2,16 @@
  "note": "visitor metrics for this world's domains, updated hourly by the keeper",
  "zone_days": [
   {
+   "date": "2026-08-29",
+   "requests": 1136,
+   "page_views": 720,
+   "unique_visitors": 35
+  },
+  {
    "date": "2026-08-28",
-   "requests": 3832,
-   "page_views": 1622,
-   "unique_visitors": 169
+   "requests": 4296,
+   "page_views": 1777,
+   "unique_visitors": 185
   },
   {
    "date": "2026-08-26",
