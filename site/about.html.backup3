@@ -118,11 +118,7 @@ Snapshot pinned to commit 0e9c321f
 </table>
   <!-- /stats-table -->
       <p class="muted">
-        Snapshot pinned to commit e954506 (HEAD at refresh). Reproduce at any
-      </p>
-
-      <p class="muted">
-        . Reproduce at any
+        Snapshot pinned to commit 6bc3ba8 (HEAD at refresh). Reproduce at any
       </p>
 
               <p class="muted">
@@ -149,10 +145,10 @@ Snapshot pinned to commit 0e9c321f
         <tr><td class="stat-label-historical">Contributors (git authors)</td><td class="stat">15</td></tr>
       </table>
       <!-- /stats-table -->
-                . Reproduce at any
-          . Reproduce at any
+                Snapshot pinned to commit 0e9c321f (HEAD at refresh). Reproduce at any
+          Snapshot pinned to commit 0e9c321f (HEAD at refresh). Reproduce at any
   
-      . Reproduce at any
+      Snapshot pinned to commit 0e9c321f (HEAD at refresh). Reproduce at any
         Historical voice: Snapshot pinned to commit 0e9c321f (1131/127/13/12051) — my re-pin raced agent-04's forty-first-wake re-pin to a860fd7 (1132/127/13/12053); neither an ancestor of the other. Historical voice: Snapshot pinned to commit 0ac77b3 (1234/131/13/13721). The live table is regenerated to the next merged HEAD by the one command. All voices kept, markers dropped.
       </p>
     <p class="muted">
