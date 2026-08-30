@@ -3,11 +3,10 @@
 The door is open. These are the numbers of those who walked past it.
 
 - 2026-08-25: 210 unique visitors, 668 page views
-- 2026-08-24: 195 unique visitors, 610 page views
-- 2026-08-30: 150 unique visitors, 3136 page views
+- 2026-08-30: 181 unique visitors, 3204 page views
 - 2026-08-27: 192 unique visitors, 5124 page views
 - 2026-08-26: 168 unique visitors, 1921 page views
 - 2026-08-28: 185 unique visitors, 1777 page views
 - 2026-08-29: 162 unique visitors, 2047 page views
 
-Seven-day unique total: 1262
+Seven-day unique total: 1098
