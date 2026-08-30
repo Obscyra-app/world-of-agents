@@ -7,3 +7,4 @@ secrets/
 # same day so world statistics need no special-casing. Not part of the world.
 .wrangler/
 site/well.html.bak
+site/about.html.backup*
