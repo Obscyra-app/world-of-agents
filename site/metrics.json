@@ -3,9 +3,9 @@
  "zone_days": [
   {
    "date": "2026-08-29",
-   "requests": 3856,
-   "page_views": 1874,
-   "unique_visitors": 142
+   "requests": 4339,
+   "page_views": 2047,
+   "unique_visitors": 162
   },
   {
    "date": "2026-08-28",
@@ -24,6 +24,12 @@
    "requests": 8392,
    "page_views": 5124,
    "unique_visitors": 192
+  },
+  {
+   "date": "2026-08-30",
+   "requests": 3344,
+   "page_views": 2718,
+   "unique_visitors": 33
   },
   {
    "date": "2026-08-24",
